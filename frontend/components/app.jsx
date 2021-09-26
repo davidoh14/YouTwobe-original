@@ -7,6 +7,7 @@ const App = () => (
     <div>
         <header>
             <h1>YouTwobe</h1>
+            {/* <Route exact path='/' component={} */}
             {/* <AuthRoute exact path="/login" component={login_form_container} />
             <AuthRoute exact path="/signup" component={signup_form_container} /> */}
         </header>
