@@ -20,7 +20,7 @@ const logoutUser = () => {
     }
 };
 
-export const createUser = formUser => dispatch => postUser(formUser)
+export const signup = formUser => dispatch => postUser(formUser)
     .then(user => dispatch(receiveUser(user))); 
 
 export const login = formUser => dispatch => postSession(formUser)
