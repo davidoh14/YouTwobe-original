@@ -6,6 +6,7 @@ import {
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
+export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 const receiveUser = user => {
     return {
@@ -20,8 +21,13 @@ const logoutUser = () => {
     }
 };
 
+const receiveErrors = errors => ({
+    type: RECEIVE_ERRORS,
+    errors
+});
+
 export const signup = formUser => dispatch => postUser(formUser)
-    .then(user => dispatch(receiveUser(user))); 
+    .then(user => dispatch(receiveUser(user)), errors => dispatch(receiveErrors(errors))); 
 
 export const login = formUser => dispatch => postSession(formUser)
     .then(user => dispatch(receiveUser(user)));
