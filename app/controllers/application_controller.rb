@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::Base
 
     skip_before_action :verify_authenticity_token
-    protect_from_forgery with: :exception
 
-    helper_method :current_user, :signed_in?
+    helper_method :current_user
   
     def current_user 
       return nil unless session[:session_token]
