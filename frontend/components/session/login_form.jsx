@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class LoginForm extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-          username: "",
-        //   email: "",
+        //   username: "",
+          email: "",
           password: ""
         };
 
@@ -14,7 +15,6 @@ class LoginForm extends React.Component{
     
     handleSubmit(e) {
         e.preventDefault();
-        // const user = Object.assign({}, this.state);
         this.props.login(this.state);
     };
 
@@ -28,21 +28,21 @@ class LoginForm extends React.Component{
         return (
             <div className="login">
                 <form>
-                    <h1>Login</h1>
-                    <label>Username:
+                    <h1>Sign in</h1>
+                    {/* <label>Username:
                         <input 
                             type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
                         />
-                    </label>
-                    {/* <label>Email:
+                    </label> */}
+                    <label>Email:
                         <input 
-                            type="text"
+                            type="email"
                             value={this.state.email}
                             onChange={this.update('email')}
                         />
-                    </label> */}
+                    </label>
                     <label>Password:
                         <input 
                             type="password"
@@ -50,7 +50,14 @@ class LoginForm extends React.Component{
                             onChange={this.update('password')}
                         />
                     </label>
-                    <button onClick={this.handleSubmit}>Login</button>
+                    <button onClick={this.handleSubmit}>Next</button>
+
+                    <ul>
+                        {this.props.errors.map((error, i) => 
+                            <li key={i}>{error}</li>)}
+                    </ul>
+
+                    <Link to='/signup'>Create account</Link>
                 </form>
             </div>
         )

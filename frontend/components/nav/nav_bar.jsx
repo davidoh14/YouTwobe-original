@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import VideoCallSharpIcon from '@mui/icons-material/VideoCallSharp';
+import MenuSharpIcon from '@mui/icons-material/MenuSharp';
 
 const NavBar = ( { currentUser, logout }) => {
   const display = currentUser ? (
@@ -10,14 +12,17 @@ const NavBar = ( { currentUser, logout }) => {
   ) : (
       
     <div>
-      <Link to='/signup'>Sign Up</Link>
-      <Link to='/login'>Log In</Link>
+      <Link to='/signup'>Create account</Link>
+      <Link to='/login'>SIGN IN</Link>
     </div>
   );
 
   return(
     <header>
       <div>
+        <MenuSharpIcon />
+        <h1>YouTwobe</h1>
+        <VideoCallSharpIcon />
         {display}
       </div>
     </header>
