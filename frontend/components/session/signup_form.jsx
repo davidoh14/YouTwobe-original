@@ -56,7 +56,8 @@ class SignUpForm extends React.Component {
                     </label>
                     <button onClick={this.handleSubmit}>Submit</button>
                     <ul>
-                        {/* errors mapped */}
+                        {this.props.errors.map((error, i) => 
+                            <li key={i}>{error}</li>)}
                     </ul>
                 </form>
             </div>

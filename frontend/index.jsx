@@ -8,17 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const root = document.getElementById("root");
 
-    let preloadedState = undefined;
+    console.log("entry", window.currentUser)
 
+    let store;
     if (window.currentUser) {
-        preloadedState = { 
-            session: { 
-                id: window.currentUser.id
-            }
+        const preloadedState = {
+          session: { id: window.currentUser.id },
+          entities: {
+            users: { [window.currentUser.id]: window.currentUser }
+          }
         };
-    }
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+      } else {
+        store = configureStore();
+      }
 
-    const store = configureStore();
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
