@@ -21,7 +21,7 @@ class SignUpForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         this.props.signup(this.state)
-            .then( () => this.props.history.push() )
+            // .then( () => this.props.history.push('/') )
     }
 
     // componentWillUnmount() {
@@ -56,7 +56,7 @@ class SignUpForm extends React.Component {
                     </label>
                     <button onClick={this.handleSubmit}>Submit</button>
                     <ul>
-
+                        {/* errors mapped */}
                     </ul>
                 </form>
             </div>
