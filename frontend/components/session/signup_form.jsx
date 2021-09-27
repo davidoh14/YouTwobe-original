@@ -22,17 +22,16 @@ class SignUpForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         this.props.signup(this.state)
-            // .then( () => this.props.history.push('/') )
     }
 
-    // componentWillUnmount() {
-    //     this.props.clearErrors();
-    // }
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
 
     render(){
         return (
             <div className="signup">
-                <h2>Sign in</h2>
+                <h2>Sign up</h2>
                 <form>
                     <label>Username:
                         <input 
@@ -55,14 +54,14 @@ class SignUpForm extends React.Component {
                             onChange={this.update('password')}
                         />
                     </label>
-                    <button onClick={this.handleSubmit}>Next</button>
+                    <button onClick={this.handleSubmit}>Sign up</button>
 
                     <ul>
                         {this.props.errors.map((error, i) => 
                             <li key={i}>{error}</li>)}
                     </ul>
 
-                    <Link to='/login'>Sign in instead</Link>
+                    <Link to='/login'>Login instead</Link>
                 </form>
             </div>
         )

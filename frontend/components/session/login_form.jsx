@@ -11,6 +11,7 @@ class LoginForm extends React.Component{
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
       }
     
     handleSubmit(e) {
@@ -24,11 +25,23 @@ class LoginForm extends React.Component{
         }
     };
 
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
+
+    demoLogin() {
+        let guest = {
+            email: "test",
+            password: "testing"
+        };
+        this.props.login(guest);
+    };
+
     render() {  
         return (
             <div className="login">
                 <form>
-                    <h1>Sign in</h1>
+                    <h1>Login</h1>
                     {/* <label>Username:
                         <input 
                             type="text"
@@ -50,14 +63,15 @@ class LoginForm extends React.Component{
                             onChange={this.update('password')}
                         />
                     </label>
-                    <button onClick={this.handleSubmit}>Next</button>
-
+                    <button onClick={this.handleSubmit}>Login</button>
+                    <button onClick={this.demoLogin}>Guest Login</button>
+                    
                     <ul>
                         {this.props.errors.map((error, i) => 
                             <li key={i}>{error}</li>)}
                     </ul>
 
-                    <Link to='/signup'>Create account</Link>
+                    <Link to='/signup'>Sign up</Link>
                 </form>
             </div>
         )

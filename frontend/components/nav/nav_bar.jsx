@@ -12,8 +12,8 @@ const NavBar = ( { currentUser, logout }) => {
   ) : (
       
     <div>
-      <Link to='/signup'>Create account</Link>
-      <Link to='/login'>SIGN IN</Link>
+      <Link to='/signup'>Sign up</Link>
+      <Link to='/login'>Login</Link>
     </div>
   );
 

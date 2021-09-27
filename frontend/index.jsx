@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const root = document.getElementById("root");
 
-    console.log("entry", window.currentUser)
-
     let store;
     if (window.currentUser) {
         const preloadedState = {
