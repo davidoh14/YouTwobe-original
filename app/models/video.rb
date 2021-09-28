@@ -3,4 +3,8 @@ class Video < ApplicationRecord
     validates :description, length: {maximum: 5000}
 
     # has_one_attached :video
+    has_one_attached :thumbnail
+    # has_one :uploader
+    
+    
 end
