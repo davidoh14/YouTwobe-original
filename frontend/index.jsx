@@ -30,5 +30,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.signup = signup;
 
     ReactDOM.render(<Root store={store} />, root)
-    // ReactDOM.render(<h1>my awesome app</h1>, root)
 });
