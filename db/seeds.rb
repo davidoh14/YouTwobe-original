@@ -19,7 +19,7 @@ user7 = User.create({username:"test", password:"test",email:"test"})
 
 
 
-# video1 = Video.create({
-#     title: "Squirrel jumps on UPS delivery man", 
-#     description: "Ring.com shared an unexpected cute moment when a squirrel jumped onto the back of a UPS driver as he made a delivery.",
-#     })
+video1 = Video.create({
+    title: "Squirrel jumps on UPS delivery man", 
+    description: "Ring.com shared an unexpected cute moment when a squirrel jumped onto the back of a UPS driver as he made a delivery.",
+    uploader_id: 14})
