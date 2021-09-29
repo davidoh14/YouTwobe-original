@@ -29,7 +29,8 @@ class LoginForm extends React.Component{
         this.props.clearSessionErrors();
     }
 
-    demoLogin() {
+    demoLogin(e) {
+        e.preventDefault();
         let guest = {
             email: "test",
             password: "test"
@@ -64,6 +65,7 @@ class LoginForm extends React.Component{
                         />
                     </label>
                     <button onClick={this.handleSubmit}>Login</button>
+                    
                     <button onClick={this.demoLogin}>Guest Login</button>
                     
                     <ul>
