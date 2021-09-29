@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :videos, only: [:index, :show]
     resource :session, only: [:create, :destroy, :show]
   end
+
+  resources :videos, only: [:show]
 end
