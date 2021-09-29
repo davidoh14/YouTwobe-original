@@ -1,39 +1,39 @@
-export const getVideos = () => (
-    $.ajax({
+export const getVideos = () => {
+    return $.ajax({
         url: '/api/videos',
-        method: 'GET',
-        data: { videos }
+        method: 'GET'
     })
-);
+};
 
-export const getVideo = videoId => (
-    $.ajax({
+export const getVideo = videoId => {
+    return $.ajax({
         url: `/api/videos/${videoId}`,
-        method: 'GET',
-        data: { video }
+        method: 'GET'
     })
-);
+} ;
 
-export const postVideo = (userId, videoId) => (
-    $.ajax({
-        url: `/api/users/${userId}/videos/${videoId}`,
+export const postVideo = (videoId) => {
+    return $.ajax({
+        url: `/api/videos/${videoId}`,
         method: 'POST',
-        data: { video }
+        data: { video },
+        contentType: false,
+        processData: false
     })
-);
+};
 
-export const patchVideo = (userId, videoId) => (
-    $.ajax({
-        url: `/api/users/${userId}/videos/${videoId}`,
+export const patchVideo = (videoId) => {
+    return $.ajax({
+        url: `/api/videos/${videoId}`,
         method: 'PATCH',
         data: { video }
     })
-);
+};
 
 
-export const deleteVideo = (userId, videoId) => (
-    $.ajax({
-        url: `/api/users/${userId}/videos/${videoId}`,
+export const deleteVideo = (videoId) => {
+    return $.ajax({
+        url: `/api/videos/${videoId}`,
         method: 'DELETE'
     })
-);
+};
