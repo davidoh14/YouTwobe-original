@@ -1,31 +1,39 @@
-export const postVideos = () => (
+export const getVideos = () => (
     $.ajax({
         url: '/api/videos',
-        method: 'POST',
+        method: 'GET',
         data: { videos }
     })
 );
 
-export const postVideo = videoId => (
+export const getVideo = videoId => (
     $.ajax({
         url: `/api/videos/${videoId}`,
+        method: 'GET',
+        data: { video }
+    })
+);
+
+export const postVideo = (userId, videoId) => (
+    $.ajax({
+        url: `/api/users/${userId}/videos/${videoId}`,
         method: 'POST',
         data: { video }
     })
 );
 
-export const editVideo = videoId => (
+export const patchVideo = (userId, videoId) => (
     $.ajax({
-        url: `/api/videos/${videoId}`,
+        url: `/api/users/${userId}/videos/${videoId}`,
         method: 'PATCH',
         data: { video }
     })
 );
 
 
-export const deleteVideo = videoId => (
+export const deleteVideo = (userId, videoId) => (
     $.ajax({
-        url: `/api/videos/${videoId}`,
+        url: `/api/users/${userId}/videos/${videoId}`,
         method: 'DELETE'
     })
 );
