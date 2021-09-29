@@ -29,21 +29,11 @@ class LoginForm extends React.Component {
     this.props.clearSessionErrors();
   }
 
-<<<<<<< HEAD
-    demoLogin(e) {
-        e.preventDefault();
-        let guest = {
-            email: "test",
-            password: "test"
-        };
-        this.props.login(guest);
-=======
   demoLogin(e) {
     e.preventDefault();
     let guest = {
       email: "test",
       password: "test",
->>>>>>> main
     };
     this.props.login(guest);
   }
@@ -60,30 +50,6 @@ class LoginForm extends React.Component {
                             onChange={this.update('username')}
                         />
                     </label> */}
-<<<<<<< HEAD
-                    <label>Email:
-                        <input 
-                            type="email"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                        />
-                    </label>
-                    <label>Password:
-                        <input 
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                        />
-                    </label>
-                    <button onClick={this.handleSubmit}>Login</button>
-                    
-                    <button onClick={this.demoLogin}>Guest Login</button>
-                    
-                    <ul>
-                        {this.props.errors.map((error, i) => 
-                            <li key={i}>{error}</li>)}
-                    </ul>
-=======
           <label>
             Email:
             <input
@@ -108,7 +74,6 @@ class LoginForm extends React.Component {
               <li key={i}>{error}</li>
             ))}
           </ul>
->>>>>>> main
 
           <Link to="/signup">Sign up</Link>
         </form>
