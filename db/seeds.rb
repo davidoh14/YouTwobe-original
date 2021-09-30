@@ -15,7 +15,6 @@ user6 = User.create({username:"foxtrot",password:"foxtrot",email:"foxtrot.io"})
 user7 = User.create({username:"test", password:"test",email:"test"})
 
 
-
 video1 = Video.create({
     title: "Squirrel jumps on UPS delivery man", 
     description: "Ring.com shared an unexpected cute moment when a squirrel jumped onto the back of a UPS driver as he made a delivery.",

@@ -1,5 +1,4 @@
-import { RECEIVE_ALL_VIDEOS, RECEIVE_VIDEO, REMOVE_VIDEO } from "../actions/"
-
+import { RECEIVE_ALL_VIDEOS, RECEIVE_VIDEO, REMOVE_VIDEO, RECEIVE_VIDEO_ERRORS, CLEAR_VIDEO_ERRORS } from "../actions/video_actions"
 
 const videosReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -18,8 +17,6 @@ const videosReducer = (state = {}, action) => {
             delete newState[action.video.id]
             return newState
     
-        
-
         default:
             return state;
     }

@@ -38,7 +38,7 @@ export const clearVideoErrors = () => {
     return {
         type: CLEAR_VIDEO_ERRORS,
     }
-}
+};
 
 export const fetchVideos = () => dispatch => {
     return(
@@ -49,19 +49,19 @@ export const fetchVideos = () => dispatch => {
     )
 };
 
-export const fetchVideo = () => dispatch => {
+export const fetchVideo = (videoId) => dispatch => {
     return(
-        getVideo().then(
+        getVideo(videoId).then(
             (video) => dispatch(receiveVideo(video)),
             (errors) => dispatch(receiveVideoErrors(errors.responseJSON))
         )
     )
 };
 
-export const removeVideo = () => dispatch => {
+export const detachVideo = (videoId) => dispatch => {
     return(
-        deleteVideo().then(
-            (videoId) => dispatch(removeVideo(videoId)),
+        deleteVideo(videoId).then(
+            () => dispatch(removeVideo(videoId)),
             (errors) => dispatch(receiveVideoErrors(errors.responseJSON)) 
         )
     )

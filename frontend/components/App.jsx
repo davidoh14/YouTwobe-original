@@ -6,6 +6,7 @@ import { Route, Switch } from "react-router";
 import Router from "react-router-dom";
 import nav_bar_container from "./nav/nav_bar_container";
 import PageNotFound from "./session/page_not_found";
+import video_index_container from "./videos/video_index_container";
 
 
 const App = () => (
