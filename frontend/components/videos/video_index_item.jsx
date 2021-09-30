@@ -1,5 +1,6 @@
 import { Component } from "react";
 import React from "react";
+import { withRouter } from "react-router";
 
 class VideoIndexItem extends React.Component{
     constructor(props){
@@ -16,7 +17,7 @@ class VideoIndexItem extends React.Component{
         return(
           <div className="video-index-item" onClick={this.watchVideo}>
               <div className="video-index-item-thumbnail">
-                  {video.thumbnail}
+              <video src={video.video} controls/>
               </div>
               <div className="video-index-item-title">
                   {video.title}

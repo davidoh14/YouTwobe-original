@@ -13,8 +13,10 @@ const App = () => (
   <div>
     <header>
       <Switch>
-        <AuthRoute exact path="/login" component={login_form_container} />
-        <AuthRoute exact path="/signup" component={signup_form_container} />
+        {/* <Route exact path='' */}
+        <AuthRoute path="/login" component={login_form_container} />
+        <AuthRoute path="/signup" component={signup_form_container} />
+        <Route path='/' component={video_index_container} />
         <Route exact path='/' component={nav_bar_container} />
         <Route component={PageNotFound} />
       </Switch>
