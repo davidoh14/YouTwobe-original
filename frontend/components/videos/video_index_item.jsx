@@ -16,14 +16,14 @@ class VideoIndexItem extends React.Component{
         const { video } = this.props;
         return(
           <div className="video-index-item" onClick={this.watchVideo}>
-              <div className="video-index-item-thumbnail">
-              <video src={video.video} controls/>
+              <div className="video-index-item-video">
+                  <video src={video.video} controls/>
               </div>
               <div className="video-index-item-title">
                   {video.title}
               </div>
               <div className="video-index-item-uploader">
-                  {video.uploader_id}
+                  {video.uploaderId}
               </div>
           </div>   
         )

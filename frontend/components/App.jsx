@@ -4,20 +4,17 @@ import signup_form_container from "./session/signup_form_container";
 import { AuthRoute } from "../util/route_util";
 import { Route, Switch } from "react-router";
 import Router from "react-router-dom";
-import nav_bar_container from "./nav/nav_bar_container";
 import PageNotFound from "./session/page_not_found";
-import video_index_container from "./videos/video_index_container";
+import Home from "./home";
 
 
 const App = () => (
   <div>
     <header>
       <Switch>
-        {/* <Route exact path='' */}
         <AuthRoute path="/login" component={login_form_container} />
         <AuthRoute path="/signup" component={signup_form_container} />
-        <Route path='/' component={video_index_container} />
-        <Route exact path='/' component={nav_bar_container} />
+        <Route exact path='/' component={Home} />
         <Route component={PageNotFound} />
       </Switch>
     </header>

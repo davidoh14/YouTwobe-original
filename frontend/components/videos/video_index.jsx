@@ -12,8 +12,13 @@ class VideoIndex extends React.Component{
     }
 
     render(){
-        // need to render all video thumbnails, titles, descriptions, and uploader id's for now 
+
+        if (!this.props.videos) {
+            return null;
+        }
+
         const { videos } = this.props;
+
 
         return (
             <div className="video-index"> 
