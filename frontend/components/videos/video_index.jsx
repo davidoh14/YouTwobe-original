@@ -8,9 +8,9 @@ class VideoIndex extends React.Component{
 
     render(){
         // need to render all video thumbnails, titles, descriptions, and uploader id's for now 
-        const {videos} = this.props.videos;
+        const { videos } = this.props;
         return (
-            <div className="video_index"> 
+            <div className="video-index"> 
                 <h1>Video Feed Index</h1>
                     {
                         videos.map(video => 
