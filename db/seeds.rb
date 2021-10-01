@@ -13,11 +13,28 @@ user4 = User.create({username:"delta",password:"delta",email:"delta.io"})
 user5 = User.create({username:"echo",password:"echo",email:"echo.io"})
 user6 = User.create({username:"foxtrot",password:"foxtrot",email:"foxtrot.io"})
 user7 = User.create({username:"test", password:"test",email:"test"})
+user8 = User.create({username:"ProZD", password:"test",email:"ProZD"})
 
 
-video1 = Video.create({
+vid1 = Video.create({
     title: "Squirrel jumps on UPS delivery man", 
     description: "Ring.com shared an unexpected cute moment when a squirrel jumped onto the back of a UPS driver as he made a delivery.",
     uploader_id: 7})
 
-# something
+squirrelP = File.open('app/assets/images/squirrelP.png')
+squirrel = File.open('app/assets/videos/squirrel.mp4')
+
+vid1.thumbnail.attach(io: file, filename: 'squirrelP.png')
+vid1.video.attach(io: file, filename: 'squirrel.mp4')
+
+vid2 = Video.create({
+    title: "people in LA every time it rains", 
+    description: "My Twitter: https://twitter.com/prozdkp",
+    uploader_id: 8})
+    
+rainP = File.open('app/assets/images/rainP.png')
+rain = File.open('app/assets/videos/rain.mp4')
+    
+vid2.thumbnail.attach(io: file, filename: 'rainP.png')
+vid2.video.attach(io: file, filename: 'rain.mp4')
+

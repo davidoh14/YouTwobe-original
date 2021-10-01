@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import VideoIndexItem from "./video_index_item";
+import VideoIndexItemContainer from "./video_index_item_container";
 
 class VideoIndex extends React.Component{
     constructor(props){
@@ -19,13 +19,13 @@ class VideoIndex extends React.Component{
 
         const { videos } = this.props;
 
-
         return (
+
             <div className="video-index"> 
                 <h1>Video Feed Index</h1>
                     {
                         videos.map((video, i) => 
-                            <VideoIndexItem key={i} video={video}/>)
+                            <VideoIndexItemContainer key={i} video={video} history={this.props.history}/>)
                     }
             </div>
         )

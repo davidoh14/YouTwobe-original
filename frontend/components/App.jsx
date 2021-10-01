@@ -6,12 +6,14 @@ import { Route, Switch } from "react-router";
 import Router from "react-router-dom";
 import PageNotFound from "./session/page_not_found";
 import Home from "./home";
+import VideoShowContainer from "./videos/video_show_container"
 
 
 const App = () => (
   <div>
     <header>
       <Switch>
+        <Route path='/watch/:videoId' component={VideoShowContainer}/>
         <AuthRoute path="/login" component={login_form_container} />
         <AuthRoute path="/signup" component={signup_form_container} />
         <Route exact path='/' component={Home} />
