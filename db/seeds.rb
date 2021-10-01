@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 user1 = User.create({username:"alpha",password:"alpha",email:"alpha.io"})
 user2 = User.create({username:"bravo",password:"bravo",email:"bravo.io"})
@@ -21,20 +22,19 @@ vid1 = Video.create({
     description: "Ring.com shared an unexpected cute moment when a squirrel jumped onto the back of a UPS driver as he made a delivery.",
     uploader_id: 7})
 
-squirrelP = File.open('app/assets/images/squirrelP.png')
-squirrel = File.open('app/assets/videos/squirrel.mp4')
+squirrelP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/squirrel_thumbnail.png')
+vid1.thumbnail.attach(io: squirrelP, filename: 'squirrelP.png')
 
-vid1.thumbnail.attach(io: file, filename: 'squirrelP.png')
-vid1.video.attach(io: file, filename: 'squirrel.mp4')
+squirrel = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/squirrel240.mp4')
+vid1.video.attach(io: squirrel, filename: 'squirrel.mp4')
 
 vid2 = Video.create({
     title: "people in LA every time it rains", 
     description: "My Twitter: https://twitter.com/prozdkp",
     uploader_id: 8})
     
-rainP = File.open('app/assets/images/rainP.png')
-rain = File.open('app/assets/videos/rain.mp4')
-    
-vid2.thumbnail.attach(io: file, filename: 'rainP.png')
-vid2.video.attach(io: file, filename: 'rain.mp4')
+rainP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/rainPic.png')
+vid2.thumbnail.attach(io: rainP, filename: 'rainP.png')
 
+rain = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/rain.mp4')
+vid2.video.attach(io: rain, filename: 'rain.mp4')
