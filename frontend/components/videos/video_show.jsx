@@ -4,6 +4,12 @@ import { Container } from "@mui/material";
 import ReactPlayer from "react-player";
 import { Grid, Typography } from "@mui/material";
 import useVideoStyles from "./useVideoStyles";
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import { Button } from "@mui/material";
+import ShareIcon from '@mui/icons-material/Share';
+import InfoIcon from '@mui/icons-material/Info';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import PauseCircleIcon from '@mui/icons-material/PauseCircle';
 
 class VideoShow extends React.Component{
 
@@ -35,9 +41,24 @@ class VideoShow extends React.Component{
 
                     <div className={classes.showPlayerControlsWrapper}>
                         <Grid container direction='row' alignItems='center' justify='space-between' style={{padding: 16}}>
-                            <Grid item >
+                            <Grid item>
                                 <Typography variant='h5' style={{color: 'white'}}>{video.title}</Typography>
                             </Grid>
+                            <Grid item>
+                                <WatchLaterIcon/>
+                            </Grid>
+                            <Grid item>
+                                <ShareIcon/>
+                            </Grid>
+                            <Grid item>
+                                <InfoIcon/>
+                            </Grid>
+                        </Grid>
+
+                        {/* mid */}
+
+                        <Grid container direction='row' alignItems='center' justify='center'>
+
                         </Grid>
                     </div>
 
