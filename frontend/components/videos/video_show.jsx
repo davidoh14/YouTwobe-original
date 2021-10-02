@@ -2,28 +2,8 @@ import React from "react";
 import VideoIndexContainer from "./video_index_container";
 import { Container } from "@mui/material";
 import ReactPlayer from "react-player";
-import { Grid } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-
-const useStyles = makeStyles({
-    showPlayerWrapper: {
-        width: "100%",
-        position: "relative"
-    },
-
-    showPlayerControlsWrapper: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: 'rgba(0,0,0,0.6)',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        zIndex: 1,
-    }
-});
+import { Grid, Typography } from "@mui/material";
+import useVideoStyles from "./useVideoStyles";
 
 class VideoShow extends React.Component{
 
@@ -37,7 +17,7 @@ class VideoShow extends React.Component{
         };
 
         const { video } = this.props;
-        const classes = useStyles();
+        const classes = useVideoStyles;
 
         return(
             <div>
@@ -54,8 +34,10 @@ class VideoShow extends React.Component{
                     </div>
 
                     <div className={classes.showPlayerControlsWrapper}>
-                        <Grid>
-
+                        <Grid container direction='row' alignItems='center' justify='space-between' style={{padding: 16}}>
+                            <Grid item >
+                                <Typography variant='h5' style={{color: 'white'}}>{video.title}</Typography>
+                            </Grid>
                         </Grid>
                     </div>
 
