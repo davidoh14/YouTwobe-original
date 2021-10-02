@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import VideoCallSharpIcon from '@mui/icons-material/VideoCallSharp';
-// import MenuSharpIcon from '@mui/icons-material/MenuSharp';
+import VideoCallSharpIcon from '@mui/icons-material/VideoCallSharp';
+import MenuSharpIcon from '@mui/icons-material/MenuSharp';
+import { AppBar, Toolbar, Typography } from '@mui/material';
+import { Button } from '@mui/material';
+
 
 const NavBar = ( { currentUser, logout }) => {
   const display = currentUser ? (
@@ -12,20 +15,25 @@ const NavBar = ( { currentUser, logout }) => {
   ) : (
       
     <div>
-      <Link to='/signup'>Sign up</Link>
-      <Link to='/login'>Login</Link>
+      <Button><Link to='/signup'>Sign up</Link></Button>
+      <Button><Link to='/login'>Login</Link></Button>
     </div>
   );
 
   return(
-    <header>
       <div>
-        {/* <MenuSharpIcon /> */}
-        <h1>YouTwobe</h1>
-        {/* <VideoCallSharpIcon /> */}
-        {display}
+        <AppBar position='sticky'>
+          <Toolbar>
+            <MenuSharpIcon />
+            <Typography variant='h6'>YouTwobe</Typography>
+            <VideoCallSharpIcon />
+            {display}
+          </Toolbar>
+        </AppBar>
       </div>
-    </header>
+
+
+
   )
 };
 

@@ -1,6 +1,7 @@
 import { Component } from "react";
 import React from "react";
 
+
 class VideoIndexItem extends React.Component{
     constructor(props){
         super(props);
@@ -18,17 +19,15 @@ class VideoIndexItem extends React.Component{
     render(){
         const { video } = this.props;
 
-        // const { video, history, fetchVideo, videoId } = this.props;
-
         return(
-          <div className="video-index-item">
-              <div className="video-index-item-video">
-                  <video src={video.video} controls/>
+          <div className="index-item">
+              <div className="index-item-thumbnail" >
+                  <img src={video.thumbnail} onClick={this.watchVideo}/>
               </div>
-              <button className="video-index-item-title" onClick={this.watchVideo}>
+              <button className="index-item-title" onClick={this.watchVideo}>
                   Title: {video.title}
               </button>
-              <div className="video-index-item-uploader">
+              <div className="index-item-uploader">
                   UploaderId: {video.uploaderId}
               </div>
           </div>   

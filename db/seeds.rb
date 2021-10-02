@@ -18,7 +18,7 @@ user8 = User.create({username:"ProZD", password:"test",email:"ProZD"})
 
 
 vid1 = Video.create({
-    title: "Squirrel jumps on UPS delivery man", 
+    title: "squirrel", 
     description: "Ring.com shared an unexpected cute moment when a squirrel jumped onto the back of a UPS driver as he made a delivery.",
     uploader_id: 7})
 
@@ -29,7 +29,7 @@ squirrel = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/squirrel240.mp
 vid1.video.attach(io: squirrel, filename: 'squirrel.mp4')
 
 vid2 = Video.create({
-    title: "people in LA every time it rains", 
+    title: "rain", 
     description: "My Twitter: https://twitter.com/prozdkp",
     uploader_id: 8})
     
