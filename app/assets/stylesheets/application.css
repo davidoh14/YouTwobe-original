@@ -16,9 +16,22 @@
  */
 
 body {
-    color:rgb(255, 255, 255);
+    color:#ffffff;
     background-color: rgb(156, 156, 156)
 }
 
+.youtube-logo {
+    height: 66px;
+    width: 44px;
+}
 
+.logo {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+}
 
+.logolink {
+    text-decoration: none;
+}

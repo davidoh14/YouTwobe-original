@@ -16,6 +16,10 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
+    <script type="text/javascript">
+      window.YouTubeLogoURL = "<%= image_url('YouTubeLogo.svg') %>";
+    </script>
+
     <% if current_user %>
       <script>
         window.currentUser = {
@@ -26,6 +30,7 @@
 
       </script>
     <%end %>
+          
 
   </head>
 

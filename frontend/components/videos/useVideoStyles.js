@@ -17,6 +17,16 @@ const useVideoStyles = makeStyles({
         flexDirection: 'column',
         justifyContent: 'space-between',
         zIndex: 1,
+    },
+    
+    outerControlIcons: {
+        color: '#ffffff',
+        fontSize: 50,
+        transform: 'scale(0.8)',
+        '&:hover': {
+            color: 'white',
+            transform: 'scale(1.2)'
+        }
     }
 });
 

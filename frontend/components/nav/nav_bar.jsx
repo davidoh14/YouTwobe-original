@@ -20,20 +20,23 @@ const NavBar = ( { currentUser, logout }) => {
     </div>
   );
 
+
   return(
       <div>
         <AppBar position='sticky'>
           <Toolbar>
             <MenuSharpIcon />
-            <Typography variant='h6'>YouTwobe</Typography>
+            <Link to='/' className='logolink'>
+              <button className='logo'>
+                <img src={window.YouTubeLogoURL} className='youtube-logo'/>
+                <Typography variant='h6'>YouTwobe</Typography>
+              </button>
+            </Link>
             <VideoCallSharpIcon />
             {display}
           </Toolbar>
         </AppBar>
       </div>
-
-
-
   )
 };
 
