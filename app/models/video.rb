@@ -4,6 +4,9 @@ class Video < ApplicationRecord
 
     has_one_attached :video
     has_one_attached :thumbnail
-    # has_one :uploader
+
+    belongs_to :uploader,
+        foreign_key: :uploader_id,
+        class_name: :User
     
 end

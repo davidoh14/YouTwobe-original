@@ -14,9 +14,15 @@ const videosReducer = (state = {}, action) => {
             return newState;
 
         case REMOVE_VIDEO:
-            delete newState[action.video.id]
+            delete newState[action.videoId]
             return newState
     
+        case RECEIVE_VIDEO_ERRORS:
+            return action.errors
+
+        case CLEAR_VIDEO_ERRORS:
+            return [];
+
         default:
             return state;
     }
