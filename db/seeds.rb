@@ -7,20 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
-user1 = User.create({username:"alpha",password:"alpha",email:"alpha.io"})
-user2 = User.create({username:"bravo",password:"bravo",email:"bravo.io"})
-user3 = User.create({username:"charlie",password:"charlie",email:"charlie.io"})
-user4 = User.create({username:"delta",password:"delta",email:"delta.io"})
-user5 = User.create({username:"echo",password:"echo",email:"echo.io"})
-user6 = User.create({username:"foxtrot",password:"foxtrot",email:"foxtrot.io"})
-user7 = User.create({username:"test", password:"test",email:"test"})
-user8 = User.create({username:"ProZD", password:"test",email:"ProZD"})
-
+user1 = User.create({username:"Ian",password:"test",email:"ian@email.com",first_name:"Ian", last_name:"McGrath"})
+user2 = User.create({username:"Vincent",password:"test",email:"vincent@email.com",first_name:"Vincent", last_name:"Hsu"})
+user3 = User.create({username:"Jimmy",password:"test",email:"jimmy@email.com",first_name:"Jimmy", last_name:"Kuang"})
+user4 = User.create({username:"Darrick",password:"test",email:"darrick@email.com",first_name:"Darrick", last_name:"Shin"})
+user5 = User.create({username:"Jon",password:"test",email:"jon@email.com",first_name:"Jon", last_name:"Zamora"})
+user6 = User.create({username:"Vern",password:"test",email:"vern@email.com",first_name:"Vern", last_name:"Chao"})
+user7 = User.create({username:"Arwen",password:"test",email:"Arwen@email.com",first_name:"Arwen", last_name:"Kim"})
+user8 = User.create({username:"ProZD", password:"test",email:"ProZD@email.com", first_name: "Pro", last_name: "ZD"})
 
 vid1 = Video.create({
     title: "squirrel", 
     description: "Ring.com shared an unexpected cute moment when a squirrel jumped onto the back of a UPS driver as he made a delivery.",
-    uploader_id: 7})
+    uploader_id: 7,
+    view_count: 0})
 
 squirrelP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/squirrel_thumbnail.png')
 vid1.thumbnail.attach(io: squirrelP, filename: 'squirrelP.png')
@@ -31,7 +31,8 @@ vid1.video.attach(io: squirrel, filename: 'squirrel.mp4')
 vid2 = Video.create({
     title: "rain", 
     description: "My Twitter: https://twitter.com/prozdkp",
-    uploader_id: 8})
+    uploader_id: 8,
+    view_count: 0})
     
 rainP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/rainPic.png')
 vid2.thumbnail.attach(io: rainP, filename: 'rainP.png')

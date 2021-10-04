@@ -7,7 +7,7 @@ import { Button } from '@mui/material';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
-import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
+// import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import AppsIcon from '@mui/icons-material/Apps';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -48,7 +48,7 @@ const NavBar = ({ currentUser, logout, classes, history }) => {
                 </InputBase>
                   <ClearIcon/>
                   <SearchIcon className={classes.searchIcon}/>
-                <KeyboardVoiceIcon/>
+                {/* <KeyboardVoiceIcon/> */}
               </div>
 
               <div className={classes.toolbarRight}>
