@@ -33,29 +33,33 @@ const NavBar = ({ currentUser, logout, classes, history }) => {
   
   return(
       <div>
-        <AppBar elevation={0} position='relative' direction='row'>
+        <AppBar elevation={0}>
           <Toolbar className={classes.toolbar} position='sticky'>
               <div className={classes.toolbarLeft}>
-                <MenuSharpIcon />
+                <MenuSharpIcon className={classes.navBarButton}/>
                 <Button className={classes.logo} onClick={()=>history.push('/')}>
                   <img src={window.YouTubeLogoURL} className={classes.youtubeLogo}/>
                   <h1 className={classes.logoText}>YouTwobe</h1>
                 </Button>
               </div>
     
+              <div className={classes.toolbarMid}>
                 <InputBase className={classes.searchBar} placeholder="Search">
                 </InputBase>
                   <ClearIcon/>
-                  <SearchIcon className='signUp'/>
+                  <SearchIcon className={classes.searchIcon}/>
                 <KeyboardVoiceIcon/>
+              </div>
 
+              <div className={classes.toolbarRight}>
                 <VideoCallSharpIcon />
                 <AppsIcon/>
                 <NotificationsNoneIcon/>
                 {display}
+              </div>
           </Toolbar>
         </AppBar>
-        {/* <div className='toolbar-pad'></div> */}
+        <div className='toolbar-pad'></div>
       </div>
   )
 };

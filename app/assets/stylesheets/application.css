@@ -24,7 +24,7 @@ body {
 }
 
 .toolbar-pad {
-    height: 56px;
+    min-height: 64px;
 }
 
 /* nav bar */

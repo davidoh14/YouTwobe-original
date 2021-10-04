@@ -25,15 +25,29 @@ const useNavStyles = {
         backgroundColor: 'rgba(32, 32, 32, 1)',
         display: 'flex',
         flexDirection: 'row',
-        height: '56px',
+        maxHeight: '64px',
         alignItems: 'center',
-        // justifyContent: 'center',
+        justifyContent: 'space-between',
         // position: 'static',
     },
 
     toolbarLeft: {
         position: 'relative',
-        flex: 'flexStart',
+        display: 'flex',
+        flex: 'flex-start',
+        alignItems: 'center'
+    },
+
+    toolbarMid: {
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center'
+    },
+
+    toolbarRight: {
+        position: 'relative',
+        display: 'flex',
+        flex: 'flex-end',
         alignItems: 'center'
     },
 
@@ -44,7 +58,7 @@ const useNavStyles = {
     }, 
 
     youtubeLogo: {
-        height: '66px',
+        height: '56px',
         width: '44px',
     },
 
@@ -53,6 +67,7 @@ const useNavStyles = {
         border: 'none',
         display: 'flex',
         alignItems: 'center',
+        maxHeight: '56px'
     },
 
     logoLink: {
@@ -83,7 +98,16 @@ const useNavStyles = {
 
     loginButtonText: {
         position: 'relative',
-    }
+    },
+
+    navBarButton: {
+        position: 'relative',
+        alignItems: 'center'
+    },
+
+    searchIcon: {
+        // zIndex: '5',
+    },
 
 
 };
