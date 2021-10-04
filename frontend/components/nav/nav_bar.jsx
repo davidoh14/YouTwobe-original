@@ -4,38 +4,58 @@ import VideoCallSharpIcon from '@mui/icons-material/VideoCallSharp';
 import MenuSharpIcon from '@mui/icons-material/MenuSharp';
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { Button } from '@mui/material';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import SearchIcon from '@mui/icons-material/Search';
+import ClearIcon from '@mui/icons-material/Clear';
+import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
+import AppsIcon from '@mui/icons-material/Apps';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import InputBase from '@mui/material/InputBase';
 
-
-const NavBar = ( { currentUser, logout }) => {
+const NavBar = ({ currentUser, logout, classes, history }) => {
+  
   const display = currentUser ? (
-  <div>
-    <button onClick={logout}>Log Out</button>
-  </div>
+  
+    <div>
+      <button onClick={logout}>Log Out</button>
+    </div>
 
   ) : (
-      
+  
     <div>
-      <Button><Link to='/signup'>Sign up</Link></Button>
-      <Button><Link to='/login'>Login</Link></Button>
+      <Button className={classes.loginButton} variant='outlined' onClick={()=> history.push('/login')}>
+        <PersonOutlineIcon/>
+        <Typography className={classes.loginButtonText}>Login</Typography>
+      </Button>
     </div>
   );
-
-
+  
   return(
       <div>
-        <AppBar position='sticky'>
-          <Toolbar>
-            <MenuSharpIcon />
-            <Link to='/' className='logolink'>
-              <button className='logo'>
-                <img src={window.YouTubeLogoURL} className='youtube-logo'/>
-                <Typography variant='h6'>YouTwobe</Typography>
-              </button>
-            </Link>
-            <VideoCallSharpIcon />
-            {display}
+        <AppBar elevation={0} position='relative' direction='row'>
+          <Toolbar className={classes.toolbar} position='sticky'>
+              <div className={classes.toolbarLeft}>
+                <MenuSharpIcon />
+                <Button className={classes.logo} onClick={()=>history.push('/')}>
+                  <img src={window.YouTubeLogoURL} className={classes.youtubeLogo}/>
+                  <h1 className={classes.logoText}>YouTwobe</h1>
+                </Button>
+              </div>
+    
+                <InputBase className={classes.searchBar} placeholder="Search">
+                </InputBase>
+                  <ClearIcon/>
+                  <SearchIcon className='signUp'/>
+                <KeyboardVoiceIcon/>
+
+                <VideoCallSharpIcon />
+                <AppsIcon/>
+                <NotificationsNoneIcon/>
+                {display}
           </Toolbar>
         </AppBar>
+        {/* <div className='toolbar-pad'></div> */}
       </div>
   )
 };

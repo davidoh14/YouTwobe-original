@@ -26,6 +26,10 @@ class VideoIndex extends React.Component{
                         videos.map((video, i) => 
                             <VideoIndexItemContainer key={i} video={video} history={this.props.history}/>)
                     }
+                    {
+                        videos.map((video, i) => 
+                            <VideoIndexItemContainer key={i} video={video} history={this.props.history}/>)
+                    }
             </div>
         )
     }
