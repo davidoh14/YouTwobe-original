@@ -11,3 +11,6 @@ if video.video.attached?
 else
     json.video ""
 end
+
+json.video url_for(video.videoFile)
+json.video url_for(video.videoThumbnail)

@@ -18,6 +18,9 @@ const NavBar = ({ currentUser, logout, classes, history }) => {
   const display = currentUser ? (
   
     <div>
+      <Button>
+        <AccountCircleIcon></AccountCircleIcon>
+      </Button>
       <button onClick={logout}>Log Out</button>
     </div>
 
@@ -26,7 +29,7 @@ const NavBar = ({ currentUser, logout, classes, history }) => {
     <div>
       <Button className={classes.loginButton} variant='outlined' onClick={()=> history.push('/login')}>
         <PersonOutlineIcon/>
-        <Typography className={classes.loginButtonText}>Login</Typography>
+        <Button variant className={classes.loginButtonText}>Login</Button>
       </Button>
     </div>
   );
@@ -48,11 +51,13 @@ const NavBar = ({ currentUser, logout, classes, history }) => {
                 </InputBase>
                   <ClearIcon/>
                   <SearchIcon className={classes.searchIcon}/>
-                {/* <KeyboardVoiceIcon/> */}
               </div>
 
               <div className={classes.toolbarRight}>
-                <VideoCallSharpIcon />
+                <Button onClick={ () => history.push('/upload')}>
+                  <VideoCallSharpIcon /> 
+                </Button>
+                
                 <AppsIcon/>
                 <NotificationsNoneIcon/>
                 {display}
