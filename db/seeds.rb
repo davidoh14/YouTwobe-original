@@ -22,11 +22,11 @@ vid1 = Video.create({
     uploader_id: 7,
     view_count: 0})
 
-# squirrelP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/squirrel_thumbnail.png')
-# vid1.thumbnail.attach(io: squirrelP, filename: 'squirrelP.png')
+squirrelP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/squirrel_thumbnail.png')
+vid1.thumbnail.attach(io: squirrelP, filename: 'squirrelP.png')
 
-# squirrel = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/squirrel240.mp4')
-# vid1.video.attach(io: squirrel, filename: 'squirrel.mp4')
+squirrel = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/squirrel240.mp4')
+vid1.video.attach(io: squirrel, filename: 'squirrel.mp4')
 
 vid2 = Video.create({
     title: "rain", 
@@ -34,8 +34,8 @@ vid2 = Video.create({
     uploader_id: 8,
     view_count: 0})
     
-# rainP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/rainPic.png')
-# vid2.thumbnail.attach(io: rainP, filename: 'rainP.png')
+rainP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/rainPic.png')
+vid2.thumbnail.attach(io: rainP, filename: 'rainP.png')
 
-# rain = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/rain.mp4')
-# vid2.video.attach(io: rain, filename: 'rain.mp4')
+rain = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/rain.mp4')
+vid2.video.attach(io: rain, filename: 'rain.mp4')

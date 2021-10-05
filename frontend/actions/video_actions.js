@@ -58,9 +58,9 @@ export const fetchVideo = (videoId) => dispatch => {
     )
 };
 
-export const createVideo = (video) => dispatch => {
+export const createVideo = (formData) => dispatch => {
     return(
-        postVideo(video).then(
+        postVideo(formData).then(
             (video) => dispatch(receiveVideo(video)),
             (errors) => dispatch(receiveVideoErrors(errors.responseJSON))
         )

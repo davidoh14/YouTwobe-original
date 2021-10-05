@@ -12,5 +12,14 @@ else
     json.video ""
 end
 
-json.video url_for(video.videoFile)
-json.video url_for(video.videoThumbnail)
+# if video.file
+#     json.video url_for(video.file)
+# else
+#     json.video ""
+# end
+
+# if video.thumbnail
+#     json.video url_for(video.thumbnail)
+# else
+#     json.video ""
+# end

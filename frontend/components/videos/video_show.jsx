@@ -32,8 +32,8 @@ class VideoShow extends React.Component{
                 <NavBarContainer/>
                 <Typography variant="h4">Video Show</Typography>
                 <div className='show-info'>
-                    {/* <video src={video.video} className='show-player' controls /> */}
-                    <video src={window.squirrelURL} className='show-player' controls />
+                    <video src={video.video} className='show-player' controls />
+                    {/* <video src={window.squirrelURL} className='show-player' controls /> */}
                     <div className='show-title'>
                         {video.title}
                     </div>

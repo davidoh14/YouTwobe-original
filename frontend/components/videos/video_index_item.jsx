@@ -17,8 +17,8 @@ class VideoIndexItem extends React.Component{
         return(
           <div className="index-item">
               <div className="index-item-thumbnail" >
-                  {/* <img src={video.thumbnail} onClick={this.watchVideo}/> */}
-                  <img src={window.squirrelPURL} onClick={this.watchVideo} />
+                  <img src={video.thumbnail} onClick={this.watchVideo}/>
+                  {/* <img src={window.squirrelPURL} onClick={this.watchVideo} /> */}
               </div>
               <button className="index-item-title" onClick={this.watchVideo}>
                   Title: {video.title}

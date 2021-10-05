@@ -29,7 +29,8 @@ const NavBar = ({ currentUser, logout, classes, history }) => {
     <div>
       <Button className={classes.loginButton} variant='outlined' onClick={()=> history.push('/login')}>
         <PersonOutlineIcon/>
-        <Button variant className={classes.loginButtonText}>Login</Button>
+        Login
+        {/* <Button className={classes.loginButtonText}>Login</Button> */}
       </Button>
     </div>
   );
