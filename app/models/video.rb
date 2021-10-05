@@ -10,5 +10,5 @@ class Video < ApplicationRecord
         class_name: :User
     
 
-        
+    
 end

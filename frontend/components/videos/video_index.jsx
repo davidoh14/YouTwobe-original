@@ -13,9 +13,9 @@ class VideoIndex extends React.Component{
     }
 
     render(){
-        if (!this.props.videos) {
-            return null;
-        }
+        // if (!this.props.videos) {
+        //     return null;
+        // }
 
         const { videos } = this.props;
 
@@ -28,7 +28,7 @@ class VideoIndex extends React.Component{
                     }
                     {
                         videos.map((video, i) => 
-                            <VideoIndexItemContainer key={i} video={video} history={this.props.history}/>)
+                            <VideoIndexItemContainer key={video.id} video={video} history={this.props.history}/>)
                     }
             </div>
         )

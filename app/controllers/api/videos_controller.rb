@@ -29,8 +29,8 @@ class Api::VideosController < ApplicationController
 
     end
 
-    def destoy
-          @video = Video.find(params[:id])
+    def destroy
+          @video = Video.find_by(id: params[:id])
 
           if @video.destroy 
             render json: @video.id

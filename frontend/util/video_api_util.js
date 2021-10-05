@@ -12,9 +12,9 @@ export const getVideo = videoId => {
     })
 } ;
 
-export const postVideo = (videoId) => {
+export const postVideo = (video) => {
     return $.ajax({
-        url: `/api/videos/${videoId}`,
+        url: `/api/videos/`,
         method: 'POST',
         data: { video },
         contentType: false,

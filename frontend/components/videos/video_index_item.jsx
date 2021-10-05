@@ -1,4 +1,3 @@
-import { Component } from "react";
 import React from "react";
 
 
@@ -6,10 +5,6 @@ class VideoIndexItem extends React.Component{
     constructor(props){
         super(props);
         this.watchVideo = this.watchVideo.bind(this);
-    }
-
-    componentDidMount(){
-        this.props.fetchVideo(this.props.videoId)
     }
     
     watchVideo() {

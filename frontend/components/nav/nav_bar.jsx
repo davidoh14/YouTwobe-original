@@ -14,7 +14,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import InputBase from '@mui/material/InputBase';
 
 const NavBar = ({ currentUser, logout, classes, history }) => {
-  
+
   const display = currentUser ? (
   
     <div>

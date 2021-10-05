@@ -44,7 +44,7 @@ export const fetchVideos = () => dispatch => {
     return(
         getVideos().then(
             (videos) => dispatch(receiveAllVideos(videos)),
-            (errors) => dispatch(receiveVideoErrors(errors.responseJSON))
+            // (errors) => dispatch(receiveVideoErrors(errors.responseJSON))
         )
     )
 };
@@ -52,6 +52,15 @@ export const fetchVideos = () => dispatch => {
 export const fetchVideo = (videoId) => dispatch => {
     return(
         getVideo(videoId).then(
+            (video) => dispatch(receiveVideo(video)),
+            (errors) => dispatch(receiveVideoErrors(errors.responseJSON))
+        )
+    )
+};
+
+export const createVideo = (video) => dispatch => {
+    return(
+        postVideo(video).then(
             (video) => dispatch(receiveVideo(video)),
             (errors) => dispatch(receiveVideoErrors(errors.responseJSON))
         )

@@ -4,7 +4,6 @@ import NavBarContainer from "../nav/nav_bar_container";
 import { Grid, Typography } from "@mui/material";
 // import { Container } from "@mui/material";
 // import ReactPlayer from "react-player";
-import useStyles from "../nav/useNavStyles";
 // import WatchLaterIcon from '@mui/icons-material/WatchLater';
 // import { Button } from "@mui/material";
 // import ShareIcon from '@mui/icons-material/Share';
@@ -12,6 +11,7 @@ import useStyles from "../nav/useNavStyles";
 // import { IconButton } from "@mui/material";
 // import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 // import PauseCircleIcon from '@mui/icons-material/PauseCircle';
+
 
 
 class VideoShow extends React.Component{
@@ -26,7 +26,6 @@ class VideoShow extends React.Component{
         };
 
         const { video } = this.props;
-        const classes = useStyles;
 
         return(
             <div>
