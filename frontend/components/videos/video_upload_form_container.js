@@ -1,17 +1,19 @@
 import VideoUploadForm from "./video_upload_form";
 import { connect } from "react-redux";
 import { createVideo } from "../../actions/video_actions";
+import { clearVideoErrors } from "../../actions/video_actions";
 
-const mSTP = ({ entities, session }) => {
+const mSTP = ({ entities, errors, session }) => {
     return{
-        videos: Object.values(entities.videos),
-        currentUser: entities.users[session.id]
+        currentUser: entities.users[session.id],
+        errors: errors.videos
     }
 };
 
 const mDTP = dispatch => {
     return{
-        createVideo: (formData) => dispatch(createVideo(formData))
+        createVideo: (formData) => dispatch(createVideo(formData)),
+        clearVideoErrors: () => dispatch(clearVideoErrors())
     }
 };
 

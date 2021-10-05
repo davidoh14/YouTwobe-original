@@ -109,6 +109,18 @@ class VideoUploadForm extends React.Component{
                         <button  onClick={this.handleSubmit}>Upload Video</button>
                     </div>
                 </div>
+
+
+                <ul>
+                    {this.props.errors ? (
+                        
+                    this.props.errors.map((error, i) => 
+                        <li key={i}>{error}</li>)
+                    ) : ( 
+                        null
+                    )}
+                </ul>
+
             </div>
         )
     }

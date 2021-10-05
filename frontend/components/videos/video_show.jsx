@@ -1,9 +1,9 @@
 import React from "react";
 import VideoIndexContainer from "./video_index_container";
 import NavBarContainer from "../nav/nav_bar_container";
+import ReactPlayer from "react-player";
 import { Grid, Typography } from "@mui/material";
 // import { Container } from "@mui/material";
-// import ReactPlayer from "react-player";
 // import WatchLaterIcon from '@mui/icons-material/WatchLater';
 // import { Button } from "@mui/material";
 // import ShareIcon from '@mui/icons-material/Share';
@@ -11,7 +11,6 @@ import { Grid, Typography } from "@mui/material";
 // import { IconButton } from "@mui/material";
 // import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 // import PauseCircleIcon from '@mui/icons-material/PauseCircle';
-
 
 
 class VideoShow extends React.Component{
@@ -32,7 +31,15 @@ class VideoShow extends React.Component{
                 <NavBarContainer/>
                 <Typography variant="h4">Video Show</Typography>
                 <div className='show-info'>
-                    <video src={video.video} className='show-player' controls />
+                    <ReactPlayer
+                        width='100%'
+                        height='100%'
+                        url={video.video} 
+                        muted={false}
+                        playing={true}
+                        controls
+                    />
+                    {/* <video src={video.video} className='show-player' controls/> */}
                     {/* <video src={window.squirrelURL} className='show-player' controls /> */}
                     <div className='show-title'>
                         {video.title}

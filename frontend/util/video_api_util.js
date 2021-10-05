@@ -22,6 +22,8 @@ export const postVideo = (formData) => {
     })
 };
 
+
+
 export const patchVideo = (videoId) => {
     return $.ajax({
         url: `/api/videos/${videoId}`,
