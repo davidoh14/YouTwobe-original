@@ -20,12 +20,17 @@ const useNavStyles = {
         justifyContent: 'space-between',
     },
 
+
+    appbar: {
+        maxHeight: '60px',
+    },
+
     toolbar: {
         color: 'white',
         backgroundColor: 'rgba(32, 32, 32, 1)',
         display: 'flex',
         flexDirection: 'row',
-        maxHeight: '64px',
+        maxHeight: '60px',
         alignItems: 'center',
         justifyContent: 'space-between',
         // position: 'static',

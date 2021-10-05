@@ -8,7 +8,9 @@ class VideoUploadForm extends React.Component{
             title: '',
             description: '',
             video: null,
+            videoUrl: '',
             thumbnail: null,
+            thumbnailUrl: '',
         },
 
         this.update = this.update.bind(this);
@@ -24,11 +26,27 @@ class VideoUploadForm extends React.Component{
     }
     
     uploadVideo(e){
-        this.setState({ video: e.currentTarget.files[0]});
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ video: file, videoUrl: fileReader.result});
+        };
+
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
     }
 
     uploadThumbnail(e){
-        this.setState({ thumbnail: e.currentTarget.files[0]});
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ thumbnail: file, thumbnailUrl: fileReader.result});
+        };
+
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
     }
 
     handleSubmit(e){
@@ -36,25 +54,21 @@ class VideoUploadForm extends React.Component{
         const formData = new FormData();
         formData.append('video[title]', this.state.title);
         formData.append('video[description]', this.state.description);
-        formData.append('video[uploader_id]', this.props.currentUser.id)
-        formData.append('video[video]', this.state.file);
+        formData.append('video[uploader_id]', this.props.currentUser.id);
+        formData.append('video[video]', this.state.video);
         formData.append('video[thumbnail]', this.state.thumbnail);
         
-        this.props.createVideo(formData) 
-        // .then(
-        //     (response) => console.log(response.message), 
-        //     (response) => console.log(response.responseJSON)
-        // );
+        this.props.createVideo(formData);
     }
     
     render(){
-        console.log(this.state)
-        console.log(this.props.currentUser)
+        console.log(this.state);
+        const preview = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl}/> : null;
         return(
             <div>
                 <NavBarContainer/>
                 <div className='video-upload-form'>
-                    <form onSubmit={this.handleSubmit}>
+                    <div>
                         <h1>Video Upload</h1>
                         <label>
                             Title: 
@@ -71,27 +85,29 @@ class VideoUploadForm extends React.Component{
                                 onChange={this.update('description')}
                             />
                         </label>
-                        <button>Upload Video</button>
-                    </form>
-                    <button>
-                        <label>
-                            Upload a video file:
-                            <input
-                                type='file' 
-                                onChange={this.uploadVideo['video']}
-                            />
-                        </label>
-                    </button>
-                    <button>
-                        <label>
-                            Upload a thumbnail:
-                            <input 
-                                type='file'
-                                onChange={this.uploadThumbnail['thumbnail']}
+                       
+                        <button>
+                            <label>
+                                Upload a video file:
+                                <input
+                                    type='file' 
+                                    onChange={this.uploadVideo}
+                                    />
+                            </label>
+                        </button>
+                        <button>
+                            <label>
+                                Upload a thumbnail:
+                                <input 
+                                    type='file'
+                                    onChange={this.uploadThumbnail}
                                 />
-                        </label>
-                    </button>
-                        
+                                <h3>Preview</h3>
+                                {preview}
+                            </label>
+                        </button>
+                        <button  onClick={this.handleSubmit}>Upload Video</button>
+                    </div>
                 </div>
             </div>
         )

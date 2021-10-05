@@ -23,11 +23,7 @@ class VideoIndex extends React.Component{
             <div className="video-index"> 
                 <h1>Video Index</h1>
                     {
-                        videos.map((video, i) => 
-                            <VideoIndexItemContainer key={i} video={video} history={this.props.history}/>)
-                    }
-                    {
-                        videos.map((video, i) => 
+                        videos.map((video) => 
                             <VideoIndexItemContainer key={video.id} video={video} history={this.props.history}/>)
                     }
             </div>

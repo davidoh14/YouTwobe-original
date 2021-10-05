@@ -18,10 +18,9 @@ const NavBar = ({ currentUser, logout, classes, history }) => {
   const display = currentUser ? (
   
     <div>
-      <Button>
-        <AccountCircleIcon></AccountCircleIcon>
+      <Button onClick={logout}>
+        <AccountCircleIcon></AccountCircleIcon> Log Out
       </Button>
-      <button onClick={logout}>Log Out</button>
     </div>
 
   ) : (
@@ -37,7 +36,7 @@ const NavBar = ({ currentUser, logout, classes, history }) => {
   
   return(
       <div>
-        <AppBar elevation={0}>
+        <AppBar elevation={0} className={classes.appbar}>
           <Toolbar className={classes.toolbar} position='sticky'>
               <div className={classes.toolbarLeft}>
                 <MenuSharpIcon className={classes.navBarButton}/>
