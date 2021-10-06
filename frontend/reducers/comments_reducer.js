@@ -1,4 +1,3 @@
-import { ReduceCapacityRounded } from "@mui/icons-material";
 import { RECEIVE_ALL_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT } from "../actions/comment_actions";
 
 const commentsReducer = ( state = {}, action ) => {
