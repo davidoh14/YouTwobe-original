@@ -10,7 +10,7 @@ export const getVideo = videoId => {
         url: `/api/videos/${videoId}`,
         method: 'GET'
     })
-} ;
+};
 
 export const postVideo = (formData) => {
     return $.ajax({
@@ -22,11 +22,9 @@ export const postVideo = (formData) => {
     })
 };
 
-
-
-export const patchVideo = (videoId) => {
+export const patchVideo = (video) => {
     return $.ajax({
-        url: `/api/videos/${videoId}`,
+        url: `/api/videos/${video}`,
         method: 'PATCH',
         data: { video }
     })

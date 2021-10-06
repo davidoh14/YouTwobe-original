@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
     has_many :videos,
         foreign_key: :uploader_id,
-        class_name: :user
+        class_name: :Video
 
     after_initialize :ensure_session_token
 
