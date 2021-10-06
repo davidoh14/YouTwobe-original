@@ -1,18 +1,24 @@
 import React from "react";
-
+import DeleteIcon from '@mui/icons-material/Delete';
 
 class VideoIndexItem extends React.Component{
     constructor(props){
         super(props);
         this.watchVideo = this.watchVideo.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
     
     watchVideo() {
         this.props.history.push(`/watch/${this.props.video.id}`)
     }
     
+    handleDelete(videoId) {
+        this.props.detachVideo(videoId)
+    }
+
     render(){
-        const { video } = this.props;
+        const { video, currentUserId } = this.props;
+        let deleteButton = video.uploaderId === currentUserId ? <DeleteIcon  /> : null;
 
         return(
           <div className="index-item">
@@ -25,6 +31,9 @@ class VideoIndexItem extends React.Component{
               </button>
               <div className="index-item-uploader">
                   UploaderId: {video.uploaderId}
+              </div>
+              <div onClick={ () => {this.handleDelete(video.id)} }>
+                {deleteButton}
               </div>
           </div>   
         )

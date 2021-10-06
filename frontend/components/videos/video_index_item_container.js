@@ -1,14 +1,15 @@
 import { connect } from "react-redux"
 import VideoIndexItem from "./video_index_item";
-import { fetchVideo } from "../../actions/video_actions";
+import { fetchVideo, detachVideo } from "../../actions/video_actions";
 import { withRouter } from "react-router";
 
-// const mapStateToProps = (state, ownProps) => ({
-//     videoId: state.entities.videos[video.id]
-// });
-
-const mapDispatchToProps = (dispatch) => ({
-    fetchVideo: (videoId) =>  dispatch(fetchVideo(videoId))
+const mapStateToProps = (state) => ({
+    currentUserId: state.session.id
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(VideoIndexItem))
+const mapDispatchToProps = (dispatch) => ({
+    fetchVideo: (videoId) =>  dispatch(fetchVideo(videoId)),
+    detachVideo: (videoId) => dispatch(detachVideo(videoId))
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VideoIndexItem))

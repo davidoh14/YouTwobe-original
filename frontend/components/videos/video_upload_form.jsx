@@ -11,7 +11,9 @@ class VideoUploadForm extends React.Component{
             videoUrl: '',
             thumbnail: null,
             thumbnailUrl: '',
+            attachmentErrors: ''
         },
+
 
         this.update = this.update.bind(this);
         this.uploadVideo = this.uploadVideo.bind(this);
@@ -51,6 +53,12 @@ class VideoUploadForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+
+        if (!this.state.video){
+            this.setState({attachmentErrors: 'Please attach a video and thumbnail'})
+            return
+        }
+            
         const formData = new FormData();
         formData.append('video[title]', this.state.title);
         formData.append('video[description]', this.state.description);
@@ -95,20 +103,25 @@ class VideoUploadForm extends React.Component{
                                     />
                             </label>
                         </button>
+
                         <button>
                             <label>
                                 Upload a thumbnail:
                                 <input 
                                     type='file'
                                     onChange={this.uploadThumbnail}
-                                />
+                                    />
                                 <h3>Preview</h3>
                                 {preview}
                             </label>
                         </button>
+                        <div className='attachment-errors'>
+                            {this.state.attachmentErrors}
+                        </div>
                         <button  onClick={this.handleSubmit}>Upload Video</button>
                     </div>
                 </div>
+
 
 
                 <ul>                     

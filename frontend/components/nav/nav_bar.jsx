@@ -37,7 +37,7 @@ const NavBar = ({ currentUser, logout, classes, history }) => {
   return(
       <div>
         <AppBar elevation={0} className={classes.appbar}>
-          <Toolbar className={classes.toolbar} position='sticky'>
+          <Toolbar className={classes.toolbar} position='sticky' sx={{ minHeight: '60px', maxHeight: '60px'}}>
               <div className={classes.toolbarLeft}>
                 <MenuSharpIcon className={classes.navBarButton}/>
                 <Button className={classes.logo} onClick={()=>history.push('/')}>
