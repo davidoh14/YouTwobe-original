@@ -8,6 +8,7 @@ const videoErrorsReducer = (state = [], action) => {
             return [];
 
         case RECEIVE_VIDEO_ERRORS:
+            debugger
             return action.errors;
 
         case CLEAR_VIDEO_ERRORS:
@@ -16,7 +17,7 @@ const videoErrorsReducer = (state = [], action) => {
         default:
             return state;
     }
-}
+};
 
 export default videoErrorsReducer;
     

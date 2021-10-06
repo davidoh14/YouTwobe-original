@@ -111,14 +111,9 @@ class VideoUploadForm extends React.Component{
                 </div>
 
 
-                <ul>
-                    {this.props.errors ? (
-                        
-                    this.props.errors.map((error, i) => 
-                        <li key={i}>{error}</li>)
-                    ) : ( 
-                        null
-                    )}
+                <ul>                     
+                    {this.props.errors.map((error, i) => 
+                        <li key={i}>{error}</li>)}
                 </ul>
 
             </div>
