@@ -32,51 +32,54 @@ class LoginForm extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     let guest = {
-      email: "test",
+      email: "ProZD@email.com",
       password: "test",
     };
     this.props.login(guest);
   }
 
   render() {
+
     return (
-      <div className="login">
-        <form>
-          <h1>Login</h1>
-          {/* <label>Username:
-                        <input 
-                            type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                        />
-                    </label> */}
-          <label>
-            Email:
-            <input
-              type="email"
-              value={this.state.email}
-              onChange={this.update("email")}
-            />
-          </label>
-          <label>
-            Password:
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-            />
-          </label>
-          <button onClick={this.handleSubmit}>Login</button>
-          <button onClick={this.demoLogin}>Guest Login</button>
+      <div>
+        <div className="login">
+          <form>
+            <h1>Login</h1>
+            {/* <label>Username:
+                          <input 
+                              type="text"
+                              value={this.state.username}
+                              onChange={this.update('username')}
+                          />
+                      </label> */}
+            <label>
+              Email:
+              <input
+                type="email"
+                value={this.state.email}
+                onChange={this.update("email")}
+              />
+            </label>
+            <label>
+              Password:
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+              />
+            </label>
+            <button onClick={this.handleSubmit}>Login</button>
+            <button onClick={this.demoLogin}>Guest Login</button>
 
-          <ul>
-            {this.props.errors.map((error, i) => (
-              <li key={i}>{error}</li>
-            ))}
-          </ul>
+            <ul>
+              {this.props.errors.map((error, i) => (
+                <li key={i}>{error}</li>
+              ))}
+            </ul>
 
-          <Link to="/signup">Sign up</Link>
-        </form>
+            <Link to="/signup">Sign up</Link>
+          </form>
+        </div>
       </div>
     );
   }

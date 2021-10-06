@@ -5,6 +5,10 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    has_many :videos,
+        foreign_key: :uploader_id,
+        class_name: :user
+
     after_initialize :ensure_session_token
 
     def self.find_by_credentials(email, password)

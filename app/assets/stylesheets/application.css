@@ -16,6 +16,77 @@
  */
 
 body {
-    color:rgb(255, 255, 255);
-    background-color: rgb(156, 156, 156)
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    /* color:#ffffff; */
+    background-color: #181818;
+    /* background-color: white */
+    font-family: Roboto;
+    color: white
 }
+
+.toolbar-pad {
+    min-height: 64px;
+}
+
+/* nav bar */
+/* .logoText {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-style: bold;
+} */
+
+
+/* .youtube-logo {
+    height: 66px;
+    width: 44px;
+}
+
+.logo {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.logoLink {
+    text-decoration: none;
+} */
+/* 
+.toolbar {
+    background-color: rgba(32, 32, 32, 1);
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+} */
+
+/* .searchbar {
+    background-color: #121212;
+    border-radius: 3px;
+    border-color: #181818;
+} */
+
+/* .signUp {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.login {
+    text-decoration: none;
+    color: #FFFFFF;
+    font: Roboto
+}
+
+.loginButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.loginButtonText {
+    position: relative;
+} */
