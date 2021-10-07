@@ -2,6 +2,7 @@ import React from "react";
 import VideoIndexContainer from "./video_index_container";
 import NavBarContainer from "../nav/nav_bar_container";
 import ReactPlayer from "react-player";
+import CommentIndexContainer from "../comments/comment_index_container";
 import { Grid, Typography } from "@mui/material";
 // import { Container } from "@mui/material";
 // import WatchLaterIcon from '@mui/icons-material/WatchLater';
@@ -54,6 +55,10 @@ class VideoShow extends React.Component{
                     </div>
                 </div>
                 
+                <div>
+                    <CommentIndexContainer/>
+                </div>
+                
                 <div className='show-recommendations'>
                     <div className='recommendation-title'>
                         Recommendations
@@ -61,9 +66,6 @@ class VideoShow extends React.Component{
                     <VideoIndexContainer/>
                 </div>
 
-                <div>
-                    
-                </div>
             </div>
         )
     }

@@ -1,17 +1,17 @@
-// const CommentItem = ({ comment }) => {
+import React from 'react';
 
-    
 
-//     return (
-//         <div>
+const CommentItem = ({ comment }) => {
 
-//             Avatar, Username, Created date
-//             Body
+    return (
+        <div>
 
-            
+            {comment.user.username}
+            {comment.createdAt}
+            {comment.body}
 
-//         </div>
-//     )
-// };
+        </div>
+    )
+};
 
-// export default CommentItem;
+export default CommentItem;

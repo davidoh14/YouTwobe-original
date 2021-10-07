@@ -1,5 +1,5 @@
-@comments.each do |comment|
+@comments.map do |comment|
     json.set! comment.id do
-        comment.partial! "api/comments/comment", comment: comment
+        json.partial! "api/comments/comment", comment: comment
     end
 end

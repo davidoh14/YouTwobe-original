@@ -5,6 +5,16 @@ class Api::CommentsController < ApplicationController
         render :index
     end
 
+    def show
+        @comment = Comment.find_by(id: params[:id])
+        
+        if @comment
+            render :show
+        else
+            render json: ['Comment does not exist'], status:422
+        end
+    end
+
     def create
         @comment = Comment.new(comment_params)
         
@@ -15,7 +25,7 @@ class Api::CommentsController < ApplicationController
         end
     end
     
-    def edit
+    def update
         @comment = Comment.find_by(id: params[:id])
         
         if @comment

@@ -11,6 +11,10 @@ class Video < ApplicationRecord
         foreign_key: :uploader_id,
         class_name: :User
 
+    has_many :comments,
+        foreign_key: :video_id,
+        class_name: :Comment
+
     def ensure_video
         unless self.video.attached?
             errors[:video] << "Must upload a video file"
