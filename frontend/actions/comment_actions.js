@@ -33,33 +33,33 @@ export const fetchAllComments = videoId => dispatch => {
     )
 };
 
-export const fetchComment = (videoId, commentId) => dispatch => {
+export const fetchComment = (commentId) => dispatch => {
     return (
-        getComment(videoId, commentId).then(
+        getComment(commentId).then(
             (comment) => dispatch(receiveComment(comment))
         )
     )
 };
 
-export const composeComment = (video) => dispatch => {
+export const composeComment = (comment) => dispatch => {
     return (
-        postComment(video).then(
+        postComment(comment).then(
             (comment) => dispatch(receiveComment(comment))
         )
     )
 };
 
-export const reviseComment = (videoId, commentId) => dispatch => {
+export const reviseComment = (commentId) => dispatch => {
     return (
-        patchComment(videoId, commentId).then(
+        patchComment(commentId).then(
             (comment) => dispatch(receiveComment(comment))
         )
     )
 };
 
-export const eraseComment = ( videoId, commentId ) => {
+export const eraseComment = (commentId ) => {
     return (
-        removeComment(videoId, commentId).then(
+        removeComment(commentId).then(
             () => dispatch(deleteComment(commentId))
         )
     )

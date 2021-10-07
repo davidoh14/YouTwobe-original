@@ -5,11 +5,9 @@ const CommentItem = ({ comment }) => {
 
     return (
         <div>
-
             {comment.user.username}
             {comment.createdAt}
             {comment.body}
-
         </div>
     )
 };

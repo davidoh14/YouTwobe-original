@@ -5,32 +5,32 @@ export const getAllComments = ( videoId ) => {
     })
 };
 
-export const getComment = ( videoId, commentId ) => {
-    return $.ajax({
-        url: `/api/videos/${videoId}/comments/${commentId}`,
-        method: 'GET'
-    })
-};
+// export const getComment = ( commentId ) => {
+//     return $.ajax({
+//         url: `/api/videos/${videoId}/comments/${commentId}`,
+//         method: 'GET'
+//     })
+// };
 
-export const postComment = ( videoId ) => {
+export const postComment = ( comment ) => {
     return $.ajax({
-        url: `/api/videos/${videoId}/comments/`,
+        url: `/api/videos/${comment.videoId}/comments/`,
         method: 'POST',
         data: { comment },
     })
 };
 
-export const patchComment = ( videoId, comment ) => {
+export const patchComment = ( comment ) => {
     return $.ajax({
-        url: `/api/videos/${videoId}/comments/${comment.id}`,
+        url: `/api/videos/${comment.videoId}/comments/${comment.id}`,
         method: 'PATCH',
         data: { comment }
     })
 };
 
-export const deleteComment = ( videoId, commentId ) => {
+export const deleteComment = ( comment ) => {
     return $.ajax({
-        url: `/api/videos/${videoId}/comments/${commentId}`,
+        url: `/api/videos/${comment.videoId}/comments/${comment.id}`,
         method: 'DELETE'
     })
 }

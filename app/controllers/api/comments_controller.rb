@@ -1,7 +1,8 @@
 class Api::CommentsController < ApplicationController
 
     def index
-        @comments = Comment.all
+        video = Video.find_by(id: params[:video_id])
+        @comments = video.comments
         render :index
     end
 
@@ -17,7 +18,8 @@ class Api::CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
-        
+        @comment.commenter_id = current_user.id
+
         if @comment.save
             render :show
         else
@@ -27,6 +29,7 @@ class Api::CommentsController < ApplicationController
     
     def update
         @comment = Comment.find_by(id: params[:id])
+        
         
         if @comment
             @comment.update
