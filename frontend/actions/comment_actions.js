@@ -57,10 +57,10 @@ export const reviseComment = (commentId) => dispatch => {
     )
 };
 
-export const eraseComment = (commentId ) => {
+export const eraseComment = ( commentId ) => {
     return (
-        removeComment(commentId).then(
-            () => dispatch(deleteComment(commentId))
+        deleteComment(commentId).then(
+            () => dispatch(removeComment(commentId))
         )
     )
 };

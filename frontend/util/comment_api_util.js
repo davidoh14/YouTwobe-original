@@ -28,9 +28,9 @@ export const patchComment = ( comment ) => {
     })
 };
 
-export const deleteComment = ( comment ) => {
+export const deleteComment = ( commentId ) => {
     return $.ajax({
-        url: `/api/videos/${comment.videoId}/comments/${comment.id}`,
+        url: `/api/videos/:videoId/comments/${commentId}`,
         method: 'DELETE'
     })
 }

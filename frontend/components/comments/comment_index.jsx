@@ -1,5 +1,6 @@
 import CommentItem from "./comment_item";
 import CommentForm from "./comment_form";
+import { eraseComment } from "../../actions/comment_actions";
 import React from "react";
 
 
@@ -46,16 +47,23 @@ class CommentIndex extends React.Component {
                     <h1>{comments.length} Comments</h1>
             
                     <div>
-                        <CommentForm composeComment={composeComment} 
-                                    videoId={videoId} currentUserId={currentUserId} 
-                                    history={this.props.history}
+                        <CommentForm 
+                            composeComment={composeComment} 
+                            videoId={videoId} 
+                            currentUserId={currentUserId} 
+                            history={this.props.history}
                         />
                     </div>
 
                     <ul>
                         {
                             comments.map( comment => 
-                                <li key={comment.id}><CommentItem comment={comment}/></li> )
+                                <li key={comment.id}>
+                                    <CommentItem 
+                                        comment={comment} 
+                                        currentUserId={currentUserId}     
+                                    />
+                                </li> )
                         }
                     </ul>
                 </div>

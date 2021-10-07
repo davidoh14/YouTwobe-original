@@ -15,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
     fetchAllComments: (videoId) => dispatch(fetchAllComments(videoId)),
-    composeComment: (comment) => dispatch(composeComment(comment))
+    composeComment: (comment) => dispatch(composeComment(comment)),
+    eraseComment: (commentId) => dispatch(eraseComment(commentId))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentIndex));
