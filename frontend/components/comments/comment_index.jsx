@@ -7,32 +7,24 @@ import React from "react";
 class CommentIndex extends React.Component {
     constructor(props){
         super(props);
-        // this.state = {
-        //     comments: this.props.comments
-        // }
-
-
     }
 
     componentDidMount(){
-        console.log(this.props.videoId)
         this.props.fetchAllComments(this.props.videoId)
     }
 
     componentDidUpdate(prevProps){
-        if (this.props.comments.length !== prevProps.comments.length) {
+        if ((this.props.videoId !== prevProps.videoId) || (this.props.comments.length !== prevProps.comments.length)) {
             this.props.fetchAllComments(this.props.videoId)
         }
     }
-    
 
     // currentVideoComments = comments => {
     //     return comments.filter(comment => comment.videoId == this.props.currentVideoId)
     // }
 
     render(){
-
-        const { comments, videoId, composeComment, currentUserId } = this.props;
+        const { comments, videoId, composeComment, currentUserId, fetchAllComments } = this.props;
 
         
         if ( comments ) {
@@ -52,6 +44,7 @@ class CommentIndex extends React.Component {
                             videoId={videoId} 
                             currentUserId={currentUserId} 
                             history={this.props.history}
+                            fetchAllComments={fetchAllComments}
                         />
                     </div>
 

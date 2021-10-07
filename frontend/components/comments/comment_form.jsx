@@ -1,5 +1,4 @@
 import React from 'react';
-import { LOGOUT_CURRENT_USER } from '../../actions/session_actions';
 import { Button } from '@mui/material';
 
 
@@ -9,7 +8,6 @@ class CommentForm extends React.Component{
         this.state = {
             body: '',
             video_id: this.props.videoId,
-            // commenter_id: this.props.currentUserId
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
@@ -18,12 +16,14 @@ class CommentForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.composeComment(this.state);
+        this.props.composeComment(this.state, {videoId: this.props.videoId});
     }
 
     currentUserCheck(){
         if (!this.props.currentUserId) {
             this.props.history.push('/login')
+        } else {
+            this.setState({video_id: this.props.videoId}) 
         }
     }
 

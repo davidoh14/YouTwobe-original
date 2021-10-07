@@ -7,7 +7,6 @@ const mapStateToProps = (state, ownProps) => {
 
     return{
         comments: Object.values(state.entities.comments),
-        // commentsObj: state.entities.comments,
         videoId: ownProps.match.params.videoId,
         currentUserId: state.session.id
     }

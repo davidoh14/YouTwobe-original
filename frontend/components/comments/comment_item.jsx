@@ -1,12 +1,20 @@
 import React from 'react';
 import Delete from '@mui/icons-material/Delete';
-import { SignalCellularNullOutlined } from '@mui/icons-material';
+import EditIcon from '@mui/icons-material/Edit';
 import { eraseComment } from '../../actions/comment_actions';
+import { reviseComment } from '../../actions/comment_actions';
 
 
 const CommentItem = ({ comment, currentUserId }) => {
 
-    const deleteComment = (currentUserId === comment.commenterId) ? <Delete onClick={()=> eraseComment(comment.id)}/> : null;
+    // handleEdit = (commentId) => {
+    //     () => reviseComment(commentId)
+    // };
+
+    const deleteComment = (currentUserId === comment.commenterId) ? 
+                <Delete onClick={()=> eraseComment(comment.id)}/> : null;
+    const editComment = (currentUserId === comment.commenterId) ?
+                <EditIcon onClick={()=> handleEdit(comment.id)}/> : null;
 
     return (
         <div>
@@ -21,7 +29,12 @@ const CommentItem = ({ comment, currentUserId }) => {
             <div>
                 {comment.body}
             </div>
-            {deleteComment}
+            <div>
+                {deleteComment}
+            </div>
+            <div>
+                {editComment}
+            </div>
             
             
         </div>

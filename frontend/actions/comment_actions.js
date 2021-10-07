@@ -1,4 +1,4 @@
-import { getAllComments, getComment, postComment, patchComment, deleteComment } from "../util/comment_api_util";
+import { getAllComments, postComment, patchComment, deleteComment } from "../util/comment_api_util";
 
 export const RECEIVE_ALL_COMMENTS = "RECEIVE_ALL_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
