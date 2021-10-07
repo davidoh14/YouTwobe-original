@@ -20,7 +20,6 @@ const useNavStyles = {
         justifyContent: 'space-between',
     },
 
-
     appbar: {
         maxHeight: '60px',
     },
