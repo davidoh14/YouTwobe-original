@@ -3,7 +3,7 @@ import VideoIndexContainer from "./video_index_container";
 import NavBarContainer from "../nav/nav_bar_container";
 import ReactPlayer from "react-player";
 import CommentIndexContainer from "../comments/comment_index_container";
-import { Grid, Typography } from "@mui/material";
+import { Avatar, Button, Grid, Typography } from "@mui/material";
 // import { Container } from "@mui/material";
 // import WatchLaterIcon from '@mui/icons-material/WatchLater';
 // import { Button } from "@mui/material";
@@ -12,6 +12,7 @@ import { Grid, Typography } from "@mui/material";
 // import { IconButton } from "@mui/material";
 // import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 // import PauseCircleIcon from '@mui/icons-material/PauseCircle';
+
 
 
 class VideoShow extends React.Component{
@@ -31,42 +32,68 @@ class VideoShow extends React.Component{
         return(
             <div>
                 <NavBarContainer/>
-                <Typography variant="h4">Video Show</Typography>
-                <div className='show-info'>
-                    <ReactPlayer
-                        width='100%'
-                        height='100%'
-                        url={video.video}
-                        // url={window.squirrelURL} 
-                        muted={false}
-                        playing={true}
-                        controls
-                    />
-                    <div className='show-title'>
-                        {video.title}
+                  <div className='show-body'>
+                    <div className='player-and-comments'>
+                        <ReactPlayer 
+                            width='1296px'
+                            height='729px'
+                            // url={video.video}
+                            url={window.squirrelURL} 
+                            muted={false}
+                            playing={true}
+                            controls
+                        />
+                        <div className='show-info-and-com'>
+                            <div className='show-info'>
+                                <div className='show-title'>
+                                    {video.title}
+                                </div>
+                                <div className='views-bar'>
+                                    <div className='show-views'>
+                                        326,377 views • Sep 16, 2021
+                                    </div>
+                                    {/* <div className='show-date'>
+                                        Sep 16, 2021
+                                    </div> */}
+                                </div>
+                                <div className='show-channel'>
+                                    <div className='av-and-channel'>
+                                        <Avatar/>
+                                        <div className='show-subs'>
+                                            <div className='show-channel-name'>
+                                                {video.username}
+                                            </div>
+                                            <div className='show-sub-count'>
+                                                18.7K subscribers
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <Button 
+                                            variant='contained'
+                                            sx={{
+                                                backgroundColor: 'red',
+                                            }}
+                                            >SUBSCRIBE
+                                        </Button>
+                                </div>
+                                <div className='show-description'>
+                                    {video.description}
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <CommentIndexContainer/>
+                            </div>
+                        </div>
                     </div>
-                    <div className='show-views'>
-                        326,377 views
+                    
+                    <div className='show-recommendations'>
+                        <div className='recommendation-title'>
+                            Recommendations
+                        </div>
+                        <VideoIndexContainer className='show-rec-index'/>
                     </div>
-                    <div className='show-date'>
-                        Sep 16, 2021
-                    </div>
-                    <div className='show-description'>
-                        {video.description}
-                    </div>
-                </div>
-                
-                <div>
-                    <CommentIndexContainer/>
-                </div>
-                
-                <div className='show-recommendations'>
-                    <div className='recommendation-title'>
-                        Recommendations
-                    </div>
-                    <VideoIndexContainer/>
-                </div>
-
+                  </div> 
             </div>
         )
     }

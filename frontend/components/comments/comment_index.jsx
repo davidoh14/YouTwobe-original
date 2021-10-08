@@ -11,6 +11,7 @@ class CommentIndex extends React.Component {
 
     componentDidMount(){
         this.props.fetchAllComments(this.props.videoId)
+    
     }
 
     componentDidUpdate(prevProps){
@@ -36,7 +37,7 @@ class CommentIndex extends React.Component {
             
             return(
                 <div>
-                    <h1>{comments.length} Comments</h1>
+                    <div className='comment-count'>{comments.length} Comments</div>
             
                     <div>
                         <CommentForm 
@@ -44,7 +45,6 @@ class CommentIndex extends React.Component {
                             videoId={videoId} 
                             currentUserId={currentUserId} 
                             history={this.props.history}
-                            fetchAllComments={fetchAllComments}
                         />
                     </div>
 

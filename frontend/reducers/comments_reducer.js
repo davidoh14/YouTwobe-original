@@ -6,7 +6,6 @@ const commentsReducer = ( state = {}, action ) => {
 
     switch (action.type) {
         case RECEIVE_ALL_COMMENTS:
-            debugger
             return action.comments;
         case RECEIVE_COMMENT:
             newState[action.comment.id] = action.comment

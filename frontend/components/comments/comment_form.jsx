@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button, TextField } from '@mui/material';
+import { Avatar } from '@mui/material';
 
 
 class CommentForm extends React.Component{
@@ -10,8 +11,9 @@ class CommentForm extends React.Component{
             video_id: this.props.videoId,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
         this.update = this.update.bind(this);
-        this.currentUserCheck = this.currentUserCheck.bind(this);
+        this.currentUserAndVideoCheck = this.currentUserAndVideoCheck.bind(this);
     }
 
     handleSubmit(e){
@@ -19,7 +21,7 @@ class CommentForm extends React.Component{
         this.props.composeComment(this.state, {videoId: this.props.videoId});
     }
 
-    currentUserCheck(){
+    currentUserAndVideoCheck(){
         if (!this.props.currentUserId) {
             this.props.history.push('/login')
         } else {
@@ -33,18 +35,51 @@ class CommentForm extends React.Component{
         }
     }
 
+    handleCancel(){
+        e.preventDefault();
+        this.setState({ body: '' })
+    }
+
     render(){
         return(
-            <div onClick={this.currentUserCheck}>
-                <form >
-                    <textarea
-                        value={this.state.body}
-                        placeholder={'Add a public comment...'}
-                        onChange={this.update('body')}
-                    />
-                    <Button onClick={this.handleSubmit}>COMMENT</Button>
-                    {/* <button>CANCEL</button> */}
-                </form>
+            <div onClick={this.currentUserAndVideoCheck}>
+
+                <div className='add-comment'>
+                    <Avatar className='comment-avatar'/>
+                    <div className='comment-form-and-buttons'>
+                        <form >
+                            <TextField
+                                className='comment-form'
+                                sx={{
+                                    fontColor: 'white',
+                                    width: '1250px',
+                                }}
+                                variant="standard"
+                                value={this.state.body}
+                                placeholder={'Add a public comment...'}
+                                onChange={this.update('body')}
+                                />
+                            <div className='comment-buttons'>
+                                <Button 
+                                    sx={{
+                                        color: 'grey'
+                                    }}
+                                    onClick={this.handleCancel}>
+                                        CANCEL
+                                </Button>
+                                <Button 
+                                    sx={{
+                                        backgroundColor: 'grey'
+                                    }}
+                                    variant='contained' 
+                                    onClick={this.handleSubmit}>
+                                        COMMENT
+                                </Button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
             </div>
         )
     }

@@ -32,26 +32,13 @@ const useNavStyles = {
         maxHeight: '60px',
         alignItems: 'center',
         justifyContent: 'space-between',
-        // position: 'static',
+        zIndex: '100',
     },
 
     toolbarLeft: {
         position: 'relative',
         display: 'flex',
         flex: 'flex-start',
-        alignItems: 'center'
-    },
-
-    toolbarMid: {
-        position: 'relative',
-        display: 'flex',
-        alignItems: 'center'
-    },
-
-    toolbarRight: {
-        position: 'relative',
-        display: 'flex',
-        flex: 'flex-end',
         alignItems: 'center'
     },
 
@@ -64,6 +51,7 @@ const useNavStyles = {
     youtubeLogo: {
         height: '56px',
         width: '44px',
+        marginLeft: '20px'
     },
 
     logo: {
@@ -82,10 +70,38 @@ const useNavStyles = {
         alignItems: 'center',
     },
 
+    toolbarMid: {
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        border: '1px solid #393939',
+        borderRadius: '3px',
+        scale: '1.2',
+    },
+
     searchBar: {
         backgroundColor: '#121212',
         borderRadius: '3px',
         borderColor: '#FFFFFF',
+        width: '300px',
+    },
+    
+    searchIcon: {
+        borderLeft: '1px solid #393939',
+        padding: '0px 15px 0px 15px'
+    },
+
+
+    toolbarRight: {
+        position: 'relative',
+        display: 'flex',
+        flex: 'flex-end',
+        alignItems: 'center',
+    },
+
+    toolbarRightIcon: {
+        marginRight: '10px',
+        fontSize: '20px',
     },
 
     login: {
@@ -109,9 +125,6 @@ const useNavStyles = {
         alignItems: 'center'
     },
 
-    searchIcon: {
-        // zIndex: '5',
-    },
 
 
 };

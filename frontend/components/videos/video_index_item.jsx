@@ -1,5 +1,7 @@
 import React from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Avatar } from "@mui/material";
+
 
 class VideoIndexItem extends React.Component{
     constructor(props){
@@ -21,19 +23,27 @@ class VideoIndexItem extends React.Component{
         let deleteButton = video.uploaderId === currentUserId ? <DeleteIcon  /> : null;
 
         return(
-          <div className="index-item">
-              <div className="index-item-thumbnail" >
-                  <img src={video.thumbnail} onClick={this.watchVideo}/>
-                  {/* <img src={window.squirrelPURL} onClick={this.watchVideo} /> */}
-              </div>
-              <button className="index-item-title" onClick={this.watchVideo}>
-                  Title: {video.title}
-              </button>
-              <div className="index-item-uploader">
-                  UploaderId: {video.uploaderId}
-              </div>
-              <div onClick={ () => {this.handleDelete(video.id)} }>
-                {deleteButton}
+          <div className="item">
+            {/* <img className="item-thumbnail" src={video.thumbnail} onClick={this.watchVideo}/> */}
+              <img className="item-thumbnail" src={window.squirrelPURL} onClick={this.watchVideo} />
+              <div className="item-info">
+                <div className='item-avatar'>
+                    <Avatar  ></Avatar>
+                </div>
+                <div className="item-text">
+                    <div className="item-title" onClick={this.watchVideo}>
+                        {/* {video.title} */} testing long sentences that will go over the limit of the box
+                    </div>
+                    <div className="item-uploader">
+                        {video.username}
+                    </div>
+                    <p className="item-uploader">
+                        {'264K'} • {'3 days ago'}
+                    </p>
+                </div>
+                <button className='item-delete' onClick={ () => {this.handleDelete(video.id)} }>
+                    {deleteButton}
+                </button>
               </div>
           </div>   
         )

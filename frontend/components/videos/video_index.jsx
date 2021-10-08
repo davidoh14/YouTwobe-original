@@ -13,19 +13,58 @@ class VideoIndex extends React.Component{
     }
 
     render(){
-        // if (!this.props.videos) {
-        //     return null;
-        // }
+ 
 
         const { videos } = this.props;
 
         return (
-            <div className="video-index"> 
-                <h1>Video Index</h1>
-                    {
-                        videos.map((video) => 
-                            <VideoIndexItemContainer key={video.id} video={video} history={this.props.history}/>)
-                    }
+            <div className="index">
+                <div className='index-left'/>
+                <div className="video-index"> 
+                        {
+                            videos.map((video) =>
+                                <div className='video-index-item' key={video.id}>
+                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
+                                </div>)
+                        }
+                        {
+                            videos.map((video) =>
+                                <div className='video-index-item' key={video.id}>
+                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
+                                </div>)
+                        }
+                        {
+                            videos.map((video) =>
+                                <div className='video-index-item' key={video.id}>
+                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
+                                </div>)
+                        }
+                        {
+                            videos.map((video) =>
+                                <div className='video-index-item' key={video.id}>
+                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
+                                </div>)
+                        }
+                        {
+                            videos.map((video) =>
+                                <div className='video-index-item' key={video.id}>
+                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
+                                </div>)
+                        }
+                        {
+                            videos.map((video) =>
+                                <div className='video-index-item' key={video.id}>
+                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
+                                </div>)
+                        }
+                        {
+                            videos.map((video) =>
+                                <div className='video-index-item' key={video.id}>
+                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
+                                </div>)
+                        }
+                </div>
+                <div className='index-right'/>
             </div>
         )
     }
