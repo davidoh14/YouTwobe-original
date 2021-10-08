@@ -1,5 +1,7 @@
 import React from "react";
 import NavBarContainer from "../nav/nav_bar_container" 
+import { Button } from "@mui/material";
+import { TextField } from "@mui/material";
 
 class VideoUploadForm extends React.Component{
     constructor(props){
@@ -75,50 +77,68 @@ class VideoUploadForm extends React.Component{
         return(
             <div>
                 <NavBarContainer/>
-                <div className='video-upload-form'>
-                    <div>
+                <div >
+                    <div className='video-upload-form'>
                         <h1>Video Upload</h1>
-                        <label>
-                            Title: 
-                            <input
-                                type='text'
+                        <div className='upload-title'>
+                            <TextField
+                                required
+                                id="filled-required"
+                                label="Title:"
+                                variant="filled"
                                 value={this.state.title}
                                 onChange={this.update('title')}
                             />
-                        </label>
-                        <label>
-                            Description:
-                            <textarea
+                            {/* <input
+                                type='text'
+                                placeholder='Title:'
+                                value={this.state.title}
+                                onChange={this.update('title')}
+                            /> */}
+                        </div>
+                        <div className='upload-description'>
+                            <TextField
+                                id="outlined-multiline-static"
+                                label="Description"
+                                multiline
+                                rows={4}
+                                defaultValue="Description:"
                                 value={this.state.description}
                                 onChange={this.update('description')}
                             />
-                        </label>
+
+                            {/* <textarea
+                                placeholder='Description:'
+                                value={this.state.description}
+                                onChange={this.update('description')}
+                            /> */}
+                        </div>
                        
-                        <button>
-                            <label>
+                        <button className='upload-video'>
+                            <div>
                                 Upload a video file:
                                 <input
                                     type='file' 
                                     onChange={this.uploadVideo}
                                     />
-                            </label>
+                            </div>
                         </button>
 
                         <button>
-                            <label>
+                            <div className='upload-thumbnail'>
                                 Upload a thumbnail:
                                 <input 
                                     type='file'
                                     onChange={this.uploadThumbnail}
                                     />
-                                <h3>Preview</h3>
+
                                 {preview}
-                            </label>
+                            </div>
                         </button>
                         <div className='attachment-errors'>
                             {this.state.attachmentErrors}
                         </div>
-                        <button  onClick={this.handleSubmit}>Upload Video</button>
+                        <Button variant='contained' onClick={this.handleSubmit}>Upload Video</Button>
                     </div>
                 </div>
 

@@ -20,12 +20,8 @@ class CommentIndex extends React.Component {
         }
     }
 
-    // currentVideoComments = comments => {
-    //     return comments.filter(comment => comment.videoId == this.props.currentVideoId)
-    // }
-
     render(){
-        const { comments, videoId, composeComment, currentUserId, fetchAllComments } = this.props;
+        const { comments, videoId, composeComment, currentUserId } = this.props;
 
         
         if ( comments ) {
@@ -48,8 +44,6 @@ class CommentIndex extends React.Component {
                 )
             }
 
-            // const currentVideoComments = comments.filter(comment => comment.videoId == currentVideoId)
-            
             return(
                 <div>
                     <div className='comment-count'>{comments.length} Comments</div>
