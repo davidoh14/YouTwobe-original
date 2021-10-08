@@ -19,6 +19,7 @@ user5 = User.create({username:"Jon",password:"test",email:"jon@email.com",first_
 user6 = User.create({username:"Vern",password:"test",email:"vern@email.com",first_name:"Vern", last_name:"Chao"})
 user7 = User.create({username:"Yuhuan",password:"test",email:"Yuhuan@email.com",first_name:"Yuhuan", last_name:"Kim"})
 user8 = User.create({username:"ProZD", password:"test",email:"ProZD@email.com", first_name: "Pro", last_name: "ZD"})
+user9 = User.create({username:"Justin Kuritzkes", password: "test", email:"justin@email.com", first_name:"justin", last_name:"Kuritzkes"})
 
 
 
@@ -50,12 +51,68 @@ vid2.video.attach(io: rain, filename: 'rain.mp4')
 
 vid2.save
 
+vid3 = Video.new({
+    title: "Potion Seller", 
+    description: "A knight and a man who sells potions.",
+    uploader_id: user9.id,
+    view_count: 0})
+    
+potionP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/potionsellerP.png')
+vid3.thumbnail.attach(io: potionP, filename: 'potionP.png')
 
-com1 = Comment.create!({body: "much wao", commenter_id: user1.id, video_id: vid1.id})
-com2 = Comment.create!({body: "the mitochondria is the powerhouse of the cell", commenter_id: user2.id, video_id: vid1.id})
-com3 = Comment.create!({body: "lulz", commenter_id: user3.id, video_id: vid1.id})
-com4 = Comment.create!({body: "hahahahaha", commenter_id: user4.id, video_id: vid1.id})
-com5 = Comment.create!({body: "poggies", commenter_id: user5.id, video_id: vid2.id})
-com6 = Comment.create!({body: "ffffffffffffff", commenter_id: user6.id, video_id: vid2.id})
-com7 = Comment.create!({body: "this house is in UNACCEPTABLE CONDITION", commenter_id: user7.id, video_id: vid2.id})
-com8 = Comment.create!({body: "yeet", commenter_id: user8.id, video_id: vid1.id})
+potion = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/potionseller.mp4')
+vid3.video.attach(io: potion, filename: 'potionseller.mp4')
+
+vid3.save
+
+vid4 = Video.new({
+    title: "Lemongrab - Unacceptable!", 
+    description: "This...castle...",
+    uploader_id: user5.id,
+    view_count: 0})
+    
+unnacceptableP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/unacceptableP.png')
+vid4.thumbnail.attach(io: unnacceptableP, filename: 'unacceptableP.png')
+
+unacceptable = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/unacceptable.mp4')
+vid4.video.attach(io: unacceptable, filename: 'unacceptable.mp4')
+
+vid4.save
+
+vid5 = Video.new({
+    title: "Deadliest Self-defense move", 
+    description: "What move has been banned in all MMA tournaments?",
+    uploader_id: user6.id,
+    view_count: 0})
+    
+selfdefenseP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/selfdefenseP.png')
+vid5.thumbnail.attach(io: selfdefenseP, filename: 'selfdefenseP.png')
+
+selfdefense = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/selfdefense.mp4')
+vid5.video.attach(io: selfdefense, filename: 'selfdefense.mp4')
+
+vid5.save
+
+vid6 = Video.new({
+    title: "Spidey-suit", 
+    description: "Uncle Ben?",
+    uploader_id: user3.id,
+    view_count: 0})
+    
+spidermanP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/spidermanP.png')
+vid6.thumbnail.attach(io: spidermanP, filename: 'spidermanP.png')
+
+spiderman = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/spiderman.mp4')
+vid6.video.attach(io: spiderman, filename: 'spiderman.mp4')
+
+vid6.save
+
+
+com1 = Comment.create!({body: "much wao", commenter_id: user1.id, video_id: vid5.id})
+com2 = Comment.create!({body: "the mitochondria is the powerhouse of the cell", commenter_id: user2.id, video_id: vid5.id})
+com3 = Comment.create!({body: "lulz", commenter_id: user3.id, video_id: vid5.id})
+com4 = Comment.create!({body: "hahahahaha", commenter_id: user4.id, video_id: vid5.id})
+com5 = Comment.create!({body: "poggies", commenter_id: user5.id, video_id: vid6.id})
+com6 = Comment.create!({body: "ffffffffffffff", commenter_id: user6.id, video_id: vid6.id})
+com7 = Comment.create!({body: "this house is in UNACCEPTABLE CONDITION", commenter_id: user7.id, video_id: vid6.id})
+com8 = Comment.create!({body: "yeet", commenter_id: user8.id, video_id: vid5.id})

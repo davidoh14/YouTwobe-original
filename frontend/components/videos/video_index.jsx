@@ -33,36 +33,7 @@ class VideoIndex extends React.Component{
                                     <VideoIndexItemContainer video={video} history={this.props.history}/>
                                 </div>)
                         }
-                        {
-                            videos.map((video) =>
-                                <div className='video-index-item' key={video.id}>
-                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
-                                </div>)
-                        }
-                        {
-                            videos.map((video) =>
-                                <div className='video-index-item' key={video.id}>
-                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
-                                </div>)
-                        }
-                        {
-                            videos.map((video) =>
-                                <div className='video-index-item' key={video.id}>
-                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
-                                </div>)
-                        }
-                        {
-                            videos.map((video) =>
-                                <div className='video-index-item' key={video.id}>
-                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
-                                </div>)
-                        }
-                        {
-                            videos.map((video) =>
-                                <div className='video-index-item' key={video.id}>
-                                    <VideoIndexItemContainer video={video} history={this.props.history}/>
-                                </div>)
-                        }
+
                 </div>
                 <div className='index-right'/>
             </div>

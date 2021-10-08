@@ -48,12 +48,11 @@ const NavBar = ({ currentUser, logout, classes, history }) => {
                 </Button>
               </div>
     
-              <div className={classes.toolbarMid}>
+              {/* <div className={classes.toolbarMid}>
                 <InputBase className={classes.searchBar} placeholder="Search">
                 </InputBase>
-                  {/* <ClearIcon/> */}
                   <SearchIcon className={classes.searchIcon}/>
-              </div>
+              </div> */}
 
               <div className={classes.toolbarRight}>
 
