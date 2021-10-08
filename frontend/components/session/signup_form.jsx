@@ -33,43 +33,44 @@ class SignUpForm extends React.Component {
     render(){
         return (
             <div className="signup">
-                <h2>Sign up</h2>
+                <div className='signup-title'>YouTwobe</div>
+                <div className='signup-title2'>Sign</div>
                 <form>
-                    <label>First Name:
+                    <div>
                         <input 
                             type="text"
                             value={this.state.firstname}
                             onChange={this.update('firstname')}
                         />
-                    </label>
-                    <label>Last Name:
+                    </div>
+                    <div>
                         <input 
                             type="text"
                             value={this.state.lastname}
                             onChange={this.update('lastname')}
                         />
-                    </label>
-                    <label>Username:
+                    </div>
+                    <div>
                         <input 
                             type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
                         />
-                    </label>
-                    <label>Email:
+                    </div>
+                    <div>
                         <input 
                             type="email"
                             value={this.state.email}
                             onChange={this.update('email')}
                         />
-                    </label>
-                    <label>Password:
+                    </div>
+                    <div>
                         <input 
                             type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                         />
-                    </label>
+                    </div>
                     <button onClick={this.handleSubmit}>Sign up</button>
 
                     <ul>

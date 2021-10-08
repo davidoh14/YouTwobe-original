@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import SignUpForm from "./signup_form";
 import { signup, clearSessionErrors } from "../../actions/session_actions";
+import { withRouter } from "react-router";
 
 
 const mapStateToProps = (state) => ({
@@ -12,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
     clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignUpForm))

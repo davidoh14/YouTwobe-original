@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { TextField } from "@mui/material";
+import { Button } from "@mui/material";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -41,43 +43,58 @@ class LoginForm extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className='login-wrapper'>
         <div className="login">
           <form>
-            <h1>Login</h1>
-            {/* <label>Username:
-                          <input 
-                              type="text"
-                              value={this.state.username}
-                              onChange={this.update('username')}
-                          />
-                      </label> */}
-            <label>
-              Email:
-              <input
+            <div className='login-title'>YouTwobe</div>
+            <div className='login-title2'>Login</div>
+              <div className='login-email'>
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Email"
+                  defaultValue="Email"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  />
+              </div>
+              {/* <input
                 type="email"
+                placeholder='Email'
                 value={this.state.email}
                 onChange={this.update("email")}
-              />
-            </label>
-            <label>
-              Password:
-              <input
+              /> */}
+              <div className='login-password'>
+                <TextField
+                  id="outlined-password-input"
+                  label="Password"
+                  type="password"
+                  autoComplete="current-password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  />
+              </div>
+              {/* <input
+                placeholder='Password'
                 type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
-              />
-            </label>
-            <button onClick={this.handleSubmit}>Login</button>
-            <button onClick={this.demoLogin}>Guest Login</button>
+              /> */}
 
+            <div className='login-buttons'>
+              <Button variant='contained' className='login-Button' onClick={this.handleSubmit}>Login</Button>
+              <Button variant='contained' className='demo-Button' onClick={this.demoLogin}>Guest Login</Button>
+            </div>
+            <Button
+              sx={{
+                color: 'black'
+              }}
+              className='signup-instead' onClick={()=> this.props.history.push('/signup')}>Sign up instead</Button>
             <ul>
               {this.props.errors.map((error, i) => (
                 <li key={i}>{error}</li>
               ))}
             </ul>
-
-            <Link to="/signup">Sign up</Link>
           </form>
         </div>
       </div>
