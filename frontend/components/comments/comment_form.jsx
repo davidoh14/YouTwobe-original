@@ -18,7 +18,7 @@ class CommentForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.composeComment(this.state, {videoId: this.props.videoId});
+        this.props.composeComment(this.state, {videoId: this.props.videoId}).then(this.setState({body: ''}))
     }
 
     currentUserAndVideoCheck(){
@@ -35,7 +35,7 @@ class CommentForm extends React.Component{
         }
     }
 
-    handleCancel(){
+    handleCancel(e){
         e.preventDefault();
         this.setState({ body: '' })
     }

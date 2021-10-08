@@ -30,7 +30,22 @@ class CommentIndex extends React.Component {
         
         if ( comments ) {
             if (comments.length === 0) {
-                return 'This video has no comments'
+                return (
+                    <div>
+                        <div>
+                            This video has no comments
+                        </div>
+                        <div>
+                            <CommentForm 
+                                composeComment={composeComment} 
+                                videoId={videoId} 
+                                currentUserId={currentUserId} 
+                                history={this.props.history}
+                            />
+                        </div>
+                    </div>
+
+                )
             }
 
             // const currentVideoComments = comments.filter(comment => comment.videoId == currentVideoId)
