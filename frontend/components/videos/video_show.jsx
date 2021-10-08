@@ -37,8 +37,8 @@ class VideoShow extends React.Component{
                         <ReactPlayer 
                             width='1296px'
                             height='729px'
-                            // url={video.video}
-                            url={window.squirrelURL} 
+                            url={video.video}
+                            // url={window.squirrelURL} 
                             muted={false}
                             playing={true}
                             controls

@@ -24,15 +24,15 @@ class VideoIndexItem extends React.Component{
 
         return(
           <div className="item">
-            {/* <img className="item-thumbnail" src={video.thumbnail} onClick={this.watchVideo}/> */}
-              <img className="item-thumbnail" src={window.squirrelPURL} onClick={this.watchVideo} />
+            <img className="item-thumbnail" src={video.thumbnail} onClick={this.watchVideo}/>
+              {/* <img className="item-thumbnail" src={window.squirrelPURL} onClick={this.watchVideo} /> */}
               <div className="item-info">
                 <div className='item-avatar'>
                     <Avatar  ></Avatar>
                 </div>
                 <div className="item-text">
                     <div className="item-title" onClick={this.watchVideo}>
-                        {/* {video.title} */} testing long sentences that will go over the limit of the box
+                        {video.title}
                     </div>
                     <div className="item-uploader">
                         {video.username}

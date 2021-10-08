@@ -23,7 +23,7 @@ user8 = User.create({username:"ProZD", password:"test",email:"ProZD@email.com", 
 
 
 vid1 = Video.new({
-    title: "squirrel", 
+    title: "Squirrel jumps on UPS delivery man", 
     description: "Ring.com shared an unexpected cute moment when a squirrel jumped onto the back of a UPS driver as he made a delivery.",
     uploader_id: user2.id,
     view_count: 0})
@@ -37,7 +37,7 @@ vid1.video.attach(io: squirrel, filename: 'squirrel240.mp4')
 vid1.save
 
 vid2 = Video.new({
-    title: "rain", 
+    title: "people in LA every time it rains", 
     description: "My Twitter: https://twitter.com/prozdkp",
     uploader_id: user8.id,
     view_count: 0})
@@ -51,11 +51,11 @@ vid2.video.attach(io: rain, filename: 'rain.mp4')
 vid2.save
 
 
-com1 = Comment.create!({body: "wao", commenter_id: user1.id, video_id: vid1.id})
-com2 = Comment.create!({body: "crazy", commenter_id: user2.id, video_id: vid1.id})
+com1 = Comment.create!({body: "much wao", commenter_id: user1.id, video_id: vid1.id})
+com2 = Comment.create!({body: "the mitochondria is the powerhouse of the cell", commenter_id: user2.id, video_id: vid1.id})
 com3 = Comment.create!({body: "lulz", commenter_id: user3.id, video_id: vid1.id})
-com4 = Comment.create!({body: "WAO", commenter_id: user4.id, video_id: vid1.id})
+com4 = Comment.create!({body: "hahahahaha", commenter_id: user4.id, video_id: vid1.id})
 com5 = Comment.create!({body: "poggies", commenter_id: user5.id, video_id: vid2.id})
 com6 = Comment.create!({body: "ffffffffffffff", commenter_id: user6.id, video_id: vid2.id})
-com7 = Comment.create!({body: "I'm old greg", commenter_id: user7.id, video_id: vid2.id})
+com7 = Comment.create!({body: "this house is in UNACCEPTABLE CONDITION", commenter_id: user7.id, video_id: vid2.id})
 com8 = Comment.create!({body: "yeet", commenter_id: user8.id, video_id: vid1.id})
