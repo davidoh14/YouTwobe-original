@@ -72,7 +72,6 @@ class VideoUploadForm extends React.Component{
     }
     
     render(){
-        console.log(this.state);
         const preview = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl}/> : null;
         return(
             <div>
