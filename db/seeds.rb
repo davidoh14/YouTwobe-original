@@ -11,15 +11,15 @@ Video.destroy_all
 User.destroy_all
 Comment.destroy_all
 
-user1 = User.create({username:"Ian",password:"test",email:"ian@email.com",first_name:"Ian", last_name:"McGrath"})
-user2 = User.create({username:"Vincent",password:"test",email:"vincent@email.com",first_name:"Vincent", last_name:"Hsu"})
-user3 = User.create({username:"Jimmy",password:"test",email:"jimmy@email.com",first_name:"Jimmy", last_name:"Kuang"})
-user4 = User.create({username:"Darrick",password:"test",email:"darrick@email.com",first_name:"Darrick", last_name:"Shin"})
-user5 = User.create({username:"Jon",password:"test",email:"jon@email.com",first_name:"Jon", last_name:"Zamora"})
-user6 = User.create({username:"Vern",password:"test",email:"vern@email.com",first_name:"Vern", last_name:"Chao"})
-user7 = User.create({username:"Yuhuan",password:"test",email:"Yuhuan@email.com",first_name:"Yuhuan", last_name:"Kim"})
-user8 = User.create({username:"ProZD", password:"test",email:"ProZD@email.com", first_name: "Pro", last_name: "ZD"})
-user9 = User.create({username:"Justin Kuritzkes", password: "test", email:"justin@email.com", first_name:"justin", last_name:"Kuritzkes"})
+user1 = User.create!({username:"Ian",password:"test",email:"ian@email.com",first_name:"Ian", last_name:"McGrath"})
+user2 = User.create!({username:"Vincent",password:"test",email:"vincent@email.com",first_name:"Vincent", last_name:"Hsu"})
+user3 = User.create!({username:"Jimmy",password:"test",email:"jimmy@email.com",first_name:"Jimmy", last_name:"Kuang"})
+user4 = User.create!({username:"Darrick",password:"test",email:"darrick@email.com",first_name:"Darrick", last_name:"Shin"})
+user5 = User.create!({username:"Jon",password:"test",email:"jon@email.com",first_name:"Jon", last_name:"Zamora"})
+user6 = User.create!({username:"Vern",password:"test",email:"vern@email.com",first_name:"Vern", last_name:"Chao"})
+user7 = User.create!({username:"Yuhuan",password:"test",email:"Yuhuan@email.com",first_name:"Yuhuan", last_name:"Kim"})
+user8 = User.create!({username:"ProZD", password:"test",email:"ProZD@email.com", first_name: "Pro", last_name: "ZD"})
+user9 = User.create!({username:"Justin Kuritzkes", password: "test", email:"justin@email.com", first_name:"justin", last_name:"Kuritzkes"})
 
 
 
