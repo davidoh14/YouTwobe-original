@@ -29,10 +29,10 @@ vid1 = Video.new({
     uploader_id: user2.id,
     view_count: 0})
 
-squirrelP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/squirrel_thumbnail.png')
+squirrelP = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/squirrel_thumbnail.png')
 vid1.thumbnail.attach(io: squirrelP, filename: 'squirrel_thumbnail.png')
 
-squirrel = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/squirrel240.mp4')
+squirrel = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/squirrel240.mp4')
 vid1.video.attach(io: squirrel, filename: 'squirrel240.mp4')
 
 vid1.save
@@ -43,10 +43,10 @@ vid2 = Video.new({
     uploader_id: user8.id,
     view_count: 0})
     
-rainP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/rainPic.png')
+rainP = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/rainPic.png')
 vid2.thumbnail.attach(io: rainP, filename: 'rainPic.png')
 
-rain = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/rain.mp4')
+rain = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/rain.mp4')
 vid2.video.attach(io: rain, filename: 'rain.mp4')
 
 vid2.save
@@ -57,10 +57,10 @@ vid3 = Video.new({
     uploader_id: user9.id,
     view_count: 0})
     
-potionP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/potionsellerP.png')
+potionP = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/potionsellerP.png')
 vid3.thumbnail.attach(io: potionP, filename: 'potionP.png')
 
-potion = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/potionseller.mp4')
+potion = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/potionseller.mp4')
 vid3.video.attach(io: potion, filename: 'potionseller.mp4')
 
 vid3.save
@@ -71,10 +71,10 @@ vid4 = Video.new({
     uploader_id: user5.id,
     view_count: 0})
     
-unnacceptableP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/unacceptableP.png')
+unnacceptableP = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/unacceptableP.png')
 vid4.thumbnail.attach(io: unnacceptableP, filename: 'unacceptableP.png')
 
-unacceptable = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/unacceptable.mp4')
+unacceptable = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/unacceptable.mp4')
 vid4.video.attach(io: unacceptable, filename: 'unacceptable.mp4')
 
 vid4.save
@@ -85,10 +85,10 @@ vid5 = Video.new({
     uploader_id: user6.id,
     view_count: 0})
     
-selfdefenseP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/selfdefenseP.png')
+selfdefenseP = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/selfdefenseP.png')
 vid5.thumbnail.attach(io: selfdefenseP, filename: 'selfdefenseP.png')
 
-selfdefense = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/selfdefense.mp4')
+selfdefense = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/selfdefense.mp4')
 vid5.video.attach(io: selfdefense, filename: 'selfdefense.mp4')
 
 vid5.save
@@ -99,10 +99,10 @@ vid6 = Video.new({
     uploader_id: user3.id,
     view_count: 0})
     
-spidermanP = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/spidermanP.png')
+spidermanP = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/spidermanP.png')
 vid6.thumbnail.attach(io: spidermanP, filename: 'spidermanP.png')
 
-spiderman = open('https://youtwobe-seed.s3.us-east-2.amazonaws.com/spiderman.mp4')
+spiderman = open('https://youtwobe-seeds.s3.us-east-2.amazonaws.com/spiderman.mp4')
 vid6.video.attach(io: spiderman, filename: 'spiderman.mp4')
 
 vid6.save
